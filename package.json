@@ -10,8 +10,13 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch"
+    "start": "webpack --watch",
+    "postinstall": "webpack"
   },
+    "engines": {
+      "node": "16.15.1",
+      "npm": "8.11.0"
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mrizwan83/FaceDiary.git"
