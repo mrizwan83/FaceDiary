@@ -1,0 +1,172 @@
+import React from 'react';
+import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
+
+const Splash = ({ currentUser, login, history }) => {
+  const splashContent = () => {
+
+    const handleDemo = (e) => {
+      e.preventDefault();
+      const demo = {
+        username: "Demo User",
+        password: "demopassword123"
+      }
+      login(demo)
+        .then(() => history.push('/'));
+    }
+
+    return (
+      <div className="splash-container">
+
+        <main id="splash">
+          <div id="logo">
+            <h1>FaceDiary</h1>
+          </div>
+          <div id="tagline">
+            <h1 id="tagline-1">Connect with friends and the world</h1>
+            <h1 id="tagline-2">around you on FaceDiary.</h1>
+          </div>
+
+
+          <button
+            id="splash-demo-button"
+            onClick={handleDemo}>
+            LOG IN AS A DEMO USER
+          </button>
+        </main>
+
+        <footer id="splash-footer">
+          <div id="tech-stack-list">
+            <ul id="tech-stack">
+              <p>TECH STACK: HTML 5, CSS, JavaScript, React, Redux, Rails, PostgreSQL</p>
+            </ul>
+          </div>
+
+          <div id="made-with-love">
+            <p>Mohammad Rizwan</p>
+          </div>
+        </footer>
+      </div>
+    )
+  }
+
+
+  const mainContent = () => {
+    return (
+      <Main history={history} location={location} />
+    )
+  };
+
+  return currentUser ? mainContent() : splashContent();
+};
+
+
+export default withRouter(Splash);
+
+// class Splash extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       email: '',
+//       password: '',
+//       loggedIn: false,
+//       first_name: '',
+//       last_name: '',
+//       birthday: '',
+//       gender: ''
+//     };
+//     this.handleSubmitLogin = this.handleSubmitLogin.bind(this);
+//     this.handleSubmitSignup = this.handleSubmitSignup.bind(this);
+//     this.handleUpdate = this.handleUpdate.bind(this);
+//     this.logout = this.logout.bind(this);
+//     this.openModal = this.openModal.bind(this);
+//   }
+
+//   handleUpdate(field) {
+//     return e => this.setState({ [field]: e.currentTarget.value });
+//   }
+
+//   handleSubmitLogin(e) {
+//     e.preventDefault();
+//     const state = this.props.login(this.state);
+//     if (state) this.setState({ loggedIn: true });
+//   }
+
+//   handleSubmitSignup(e) {
+//     e.preventDefault();
+//     const state = this.props.signup(this.state);
+//     if (state) this.setState({ loggedIn: true });
+//   }
+
+//   logout() {
+//     this.props.logout();
+//     this.setState({ loggedIn: false });
+//   }
+
+//   openModal() {
+//     const modal = document.getElementById("modal");
+//     modal.classList.remove("invisible");
+//     modal.classList.add("openModal");
+//     const whiteBackground = document.getElementById("white-background");
+//     whiteBackground.classList.remove("invisible");
+//     whiteBackground.classList.add("white-background")
+//   }
+
+//   closeModal() {
+//     const modal = document.getElementById("modal");
+//     modal.classList.remove("openModal");
+//     modal.classList.add("invisible");
+//   }
+
+//   render() {
+//     if (!this.state.loggedIn) {
+//       return (
+//         <div id="login-signup-forms" className="invisible">
+//           <div id="white-background"></div>
+//           <div id="login-container">
+//             <form onSubmit={this.handleSubmitLogin}>
+//               <input type="email" name="email" value={this.state.email} onChange={this.handleUpdate('email')} placeholder="Email" required />
+//               <input type="password" name="password" value={this.state.password} onChange={this.handleUpdate('password')} placeholder="Password" required />
+//               <button type="submit" className="login-button">Log In</button>
+
+//               <div id="demo-login">Login as Demo User?</div>
+
+//               <hr />
+
+//               <button onClick={this.openModal}>Create new account</button>
+//             </form>
+//             <div className="create-a-page">
+//               <p><span>Create a Page </span> for a celebrity, brand or business.</p>
+//             </div>
+//           </div>
+//           <div id="modal" className="invisible">
+//             <form onSubmit={this.handleSubmitSignup}>
+//               <div>
+//                 <h1>Sign Up</h1>
+//                 <h2>It's quick and easy.</h2>
+//                 <hr />
+//                 <div>
+//                   <input type="text" value={this.state.first_name} onChange={this.handleUpdate('first_name')} placeholder="First name" required />
+//                   <input type="text" value={this.state.last_name} onChange={this.handleUpdate('last_name')} placeholder="Last name" required />
+//                 </div>
+//                 <input type="email" value={this.state.email} onChange={this.handleUpdate('email')} placeholder="Email" required />
+//                 <input type="password" value={this.state.password} onChange={this.handleUpdate('password')} placeholder="New password" required />
+//                 <input type="text" value={this.state.birthday} onChange={this.handleUpdate('birthday')} placeholder="Birthday" required />
+//                 <input type="text" value={this.state.gender} onChange={this.handleUpdate('gender')} placeholder="Gender" required />
+//               </div>
+//               <button type="submit">Sign Up</button>
+//             </form>
+//           </div>
+//         </div>
+//       )
+//     } else {
+//       return (
+//         <div>
+//           <button onClick={this.logout}>Logout</button>
+//         </div>
+//       )
+//     }
+//   }
+// }
+
+// export default Splash;
