@@ -132,12 +132,12 @@ footer {
   padding: 10px 50px 10px 50px;
   display: flex;
   color: dimgray;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-links {
   display: flex;
-  width: 100%;
-  padding: 0 30% 0 0;
 }
 
 .footer-links a {
@@ -145,7 +145,6 @@ footer {
 }
 
 .copyright {
-  width: 20%;
   text-align: center;
 }
 
@@ -205,17 +204,26 @@ span {
 .signup-header {
   display: flex;
   flex-direction: column;
-  width: 100%
+  width: 100%;
 }
 
 .signup-header>h1 {
-  padding-bottom: 10px;
-  font-size: 30px;
-  font-weight: bold;
+      color: #1c1e21;
+        font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
+        font-size: 32px;
+        line-height: 38px;
 }
 
 .signup-header>h3 {
-  padding-bottom: 10px;
+     color: #606770;
+    font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 12px;color: #606770;
+      font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 24px;
+      margin-bottom: 12px;
 }
 
 .signup-names-input {
@@ -246,7 +254,7 @@ span {
   position: relative;
 }
 
-//error message start
+
 .error-messages.birthday,
 .error-messages.fname,
 .error-messages.email,
@@ -360,3 +368,4 @@ span {
   top: -40%;
   left: -50%
 }
+

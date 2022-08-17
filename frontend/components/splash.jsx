@@ -13,7 +13,7 @@ class Splash extends React.Component {
           </div>
           <LoginFormContainer />
         </header>
-        <footer>
+        <footer classname="footer-info">
           <div className='copyright'>&copy; Mohammad Rizwan 2022</div>
           <div className='footer-links'>
             <a target="_blank" href="https://linkedin.com/in/mohammad-rizwan-a83a31246">LinkedIn</a>
