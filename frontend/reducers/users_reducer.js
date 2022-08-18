@@ -8,7 +8,7 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_ALL_USERS:
       return Object.assign({}, action.usersPayload.users)
     case RECEIVE_CURRENT_USER:
-      nextState[action.currentUser.user.id] = action.currentUser.user
+      nextState[action.currentUser.id] = action.currentUser
       return nextState;
     case RECEIVE_USER:
       nextState[action.user.user.id] = action.user.user

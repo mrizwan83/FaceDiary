@@ -6,14 +6,15 @@
 #  email           :string           not null
 #  password_digest :string           not null
 #  session_token   :string           not null
-#  name            :string           not null
 #  gender          :string           not null
 #  birthday        :date             not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  firstname       :string           not null
+#  lastname        :string           not null
 #
 class User < ApplicationRecord
-    validates :email, :session_token, :password_digest, :name, :gender, :birthday, presence: true 
+    validates :email, :session_token, :password_digest, :firstname, :lastname, :gender, :birthday, presence: true 
     validates :email, :session_token, uniqueness: true 
     validates :password, length: { minimum: 6, allow_nil: true }
     after_initialize :ensure_session_token

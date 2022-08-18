@@ -6,11 +6,12 @@
 #  email           :string           not null
 #  password_digest :string           not null
 #  session_token   :string           not null
-#  name            :string           not null
 #  gender          :string           not null
 #  birthday        :date             not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  firstname       :string           not null
+#  lastname        :string           not null
 #
 require 'test_helper'
 

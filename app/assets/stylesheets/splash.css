@@ -58,7 +58,6 @@ button:hover {
   background: white;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 3px 3px 8px 2px #cecccc;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -115,12 +114,19 @@ button,
 input {
   border-radius: 6px;
 }
+.name-input{
+  border: 1px solid #cecccc;
+    margin-bottom: 10px;
+    font-size: 17px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 90%;
+}
 
 .login-input {
   border: 1px solid #cecccc;
   padding: 15px;
   margin-bottom: 10px;
-  width: 330px;
   font-size: 17px;
 }
 
@@ -188,7 +194,7 @@ span {
 }
 
 .modal-child>.login-form-container {
-  height: 400px;
+  height: 550px;
 }
 
 .signup-border,
@@ -205,12 +211,13 @@ span {
   display: flex;
   flex-direction: column;
   width: 100%;
+  justify-content: flex-start;
 }
 
 .signup-header>h1 {
       color: #1c1e21;
         font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
-        font-size: 32px;
+        font-size: 40px;
         line-height: 38px;
 }
 
@@ -228,25 +235,36 @@ span {
 
 .signup-names-input {
   display: flex;
-  justify-content: space-between;
 }
 
 .signup-names {
   display: flex;
-  flex-direction: column;
   position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 375px
 }
 
 .birthday {
-  font-size: 12px;
-  margin-bottom: 3px;
+  font-size: 16px;
+  margin-bottom: 5px;
 }
 
 .birthday-parent-container {
   display: flex;
   flex-direction: column;
   position: relative;
+  margin-bottom: 15px;
 }
+
+.gender-parent-container {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
 
 .password-container {
   display: flex;

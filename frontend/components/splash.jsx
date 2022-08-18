@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import LoginFormContainer from './session_form/login_form_container'
+import LoginFormContainer from './session_form/session_form_container'
 
 class Splash extends React.Component {
   render() {
     return (
       <>
+      {console.log(this.state)}
         <header>
           <div className="splash-header">
             <h1 className='splash-logo'>FaceDiary</h1>
@@ -13,7 +14,7 @@ class Splash extends React.Component {
           </div>
           <LoginFormContainer />
         </header>
-        <footer classname="footer-info">
+        <footer className="footer-info">
           <div className='copyright'>&copy; Mohammad Rizwan 2022</div>
           <div className='footer-links'>
             <a target="_blank" href="https://linkedin.com/in/mohammad-rizwan-a83a31246">LinkedIn</a>

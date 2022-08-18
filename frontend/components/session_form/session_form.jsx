@@ -7,8 +7,10 @@ class SessionForm extends React.Component {
     this.state = {
       email: '',
       password: '',
-      name: '',
-      birthday: ''
+      firstname: '',
+      lastname: '',
+      birthday: '',
+      gender: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
@@ -19,6 +21,7 @@ class SessionForm extends React.Component {
     this.displayPasswordError = this.displayPasswordError.bind(this);
     this.displayEmailError = this.displayEmailError.bind(this);
     this.openModal = this.openModal.bind(this)
+    this.displaySignupGender = this.displaySignupGender.bind(this)
   }
 
   componentDidMount() {
@@ -51,7 +54,7 @@ class SessionForm extends React.Component {
 
   handleDemo(e) {
     e.preventDefault();
-    const demoUser = { email: 'demo_user@squat.com', password: 'password' };
+    const demoUser = { email: 'demo@demo.com', password: 'starwars' };
     this.props.processForm(demoUser);
   }
 
@@ -61,15 +64,24 @@ class SessionForm extends React.Component {
         <div className='signup-names'>
           <div className='signup-names-input'>
             <input type="text"
-              onChange={this.update('name')}
-              value={this.state.name}
-              className={this.props.errors.name ? 'login-input errors' : 'login-input'}
-              placeholder='Name'
+              onChange={this.update('firstname')}
+              value={this.state.firstname}
+              className={this.props.errors.firstname ? 'login-input errors' : 'name-input'}
+              placeholder='First Name'
+            />
+            <input type="text"
+              onChange={this.update('lastname')}
+              value={this.state.lastname}
+              className={this.props.errors.lastname ? 'login-input errors' : 'name-input'}
+              placeholder='Last Name'
             />
           </div>
 
-          <div className={this.props.errors.name ? 'error-messages name' : null}
-            id="fname">{this.props.errors.fname}
+          <div className={this.props.errors.firstname ? 'error-messages name' : null}
+            id="fname">{this.props.errors.firstname}
+          </div>
+          <div className={this.props.errors.lastname ? 'error-messages name' : null}
+            id="lname">{this.props.errors.lastname}
           </div>
         </div>
       )
@@ -88,6 +100,50 @@ class SessionForm extends React.Component {
             className={this.props.errors.birthday ? 'login-input errors' : 'login-input'}
           />
           <div className={this.props.errors.birthday ? 'error-messages birthday' : 'error-messages'}>{this.props.errors.birthday}</div>
+        </div>)
+    }
+  }
+
+  displaySignupGender() {
+    if (this.props.formType === 'Sign Up') {
+      return (
+        <div className='gender-parent-container'>
+          <label className='gender'>Gender: </label>
+          <div className='gender-child-container'>
+          <label>Male
+          <input type="radio"
+            name="gender"
+            value="Male"
+            checked={this.state.gender === "Male"}
+            onChange={this.update('gender')}
+            className={this.props.errors.gender ? 'login-input errors' : 'login-input'}
+          />
+          </label>
+          </div>
+          <div className='gender-child-container'>
+          <label>Female
+            <input type="radio"
+              name="gender"
+              value="Female"
+              checked={this.state.gender === "Female"}
+              onChange={this.update('gender')}
+              className={this.props.errors.gender ? 'login-input errors' : 'login-input'}
+            />
+          </label>
+          </div>
+
+          <div className='gender-child-container'>
+          <label>Other
+            <input type="radio"
+              name="gender"
+              value="Other"
+              checked={this.state.gender === "Other"}
+              onChange={this.update('gender')}
+              className={this.props.errors.gender ? 'login-input errors' : 'login-input'}
+            />
+          </label>
+          </div>
+          <div className={this.props.errors.gender ? 'error-messages gender' : 'error-messages'}>{this.props.errors.gender}</div>
         </div>)
     }
   }
@@ -160,6 +216,7 @@ class SessionForm extends React.Component {
 
             {this.displayPasswordError()}
             {this.displaySignupBirthday()}
+            {this.displaySignupGender()}
             <button className="session-submit" type="submit">{this.props.formType}</button>
           </div>
         </form>
