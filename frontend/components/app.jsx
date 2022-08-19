@@ -6,6 +6,7 @@ import SplashContainer from './splash';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal';
+import FeedContainer from './feed/feed_container';
 
 const App = () => {
   return (
@@ -13,7 +14,7 @@ const App = () => {
       <Modal />
       <Switch>
         {/* <ProtectedRoute path='/users/:userId' component={ProfileContainer} /> */}
-        {/* <ProtectedRoute path='/feed' component={FeedContainer} /> */}
+        <ProtectedRoute path='/feed' component={FeedContainer} />
         <AuthRoute exact path='/' component={SplashContainer} />
         <Redirect to='/feed' />
       </Switch>
