@@ -1,3 +1,11 @@
 .header-left > img {
     height: 40px;
 }
+
+.header-middle > img {
+    height: 40px;
+}
+
+.logo {
+    height: 40px;
+}
