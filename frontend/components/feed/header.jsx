@@ -13,7 +13,7 @@ class Header extends React.Component {
             <Link to="/feed">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png" alt="" className="logo" />
             </Link>
-            <input type="text" placeholder="Search FaceDiary" />
+            <input type="text" placeholder="Search FaceDiary" className="searchbar"/>
             </div>
 
             <div className="header-middle">
@@ -24,9 +24,9 @@ class Header extends React.Component {
                 <a href="https://linkedin.com/in/mohammad-rizwan-a83a31246"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/800px-LinkedIn_logo_initials.png" alt="" className="logo" /></a>
             </div>
 
-            <div className="header-right"></div>
-            
-
+            <div className="header-right">
+            <button onClick={this.props.logout} className="logout"> <img src="https://freepikpsd.com/file/2019/10/logout-logo-png-Transparent-Images.png" alt="" className="logo"/></button>
+            </div>
             
             </div>
         )
