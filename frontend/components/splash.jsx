@@ -7,11 +7,13 @@ class Splash extends React.Component {
     return (
       <>
         <header>
+          <main className='main-body-splash'>
           <div className="splash-header">
-            <h1 className='splash-logo'>FaceDiary</h1>
+            <h1 className='splash-logo'>facediary</h1>
             <h2 className='splash-title'>Connect with friends and the world around you on FaceDiary.</h2>
           </div>
           <LoginFormContainer />
+          </main>
         </header>
         <footer className="footer-info">
           <div className='copyright'>&copy; Mohammad Rizwan 2022</div>

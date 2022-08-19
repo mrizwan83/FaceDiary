@@ -1,5 +1,4 @@
 body {
-  /* font-family: 'Roboto', sans-serif; */
   font-family: SFProDisplay-Regular,
     Helvetica,
     Arial,
@@ -12,8 +11,18 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 60px;
-  height: 500px;
+  height: 720px;
+}
+
+.main-body-splash {
+  background: #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 536px;
+  width: 1140px;
+  padding-bottom: 112px;
+  padding-top: 72px;
 }
 
 textarea {
@@ -35,14 +44,15 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  width: 400px;
+  width: 432px;
 }
 
 .splash-logo {
   color: #1877f2;
-  font-size: 50px;
-  font-weight: 900;
+  font-size: 60px;
+  font-weight: 700;
   margin-bottom: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .splash-title {
@@ -271,8 +281,12 @@ span {
   display: flex;
   flex-direction: column;
   position: relative;
+  margin-bottom: 5px;
 }
 
+.gender {
+  margin-top: 2px;
+}
 
 .error-messages.birthday,
 .error-messages.fname,
