@@ -6,7 +6,6 @@ class Splash extends React.Component {
   render() {
     return (
       <>
-      {console.log(this.state)}
         <header>
           <div className="splash-header">
             <h1 className='splash-logo'>FaceDiary</h1>
