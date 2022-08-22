@@ -10,9 +10,11 @@ class Feed extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='app'>
         <Header />
+        <div className='app-body'>
         <LeftNav />
+        </div>
     </div>
     )
   }

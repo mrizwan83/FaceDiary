@@ -6,7 +6,7 @@
 }
 
 .sidebar-item:hover {
-    background-color: #eff2f5;
+    background-color: lightgray;
     border-radius: 10px;
 }
 
