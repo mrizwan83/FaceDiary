@@ -3,7 +3,6 @@
     align-items: center;
     padding: 10px;
     cursor: pointer;
-    margin-left: 8px;
 }
 
 .sidebar-item:hover {
@@ -17,6 +16,20 @@
 }
 
 .sidebar {
+    padding: 25px 10px;
+    flex: 0.33;
+}
+
+.middle-feed {
+    flex: 1;
+    padding: 30px 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.feed-right {
     padding: 25px 10px;
     flex: 0.33;
 }

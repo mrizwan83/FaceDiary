@@ -8,7 +8,10 @@ class MiddleFeed extends React.Component {
     render() {
         return(
             <div className="middle-feed">
-                trhtrthgtrhjtgregtrjtyh
+                <div className="middle-post-top">
+                    <div className="post-icon-feed">icon</div>
+                    <div>Whats on your mind?</div>
+                </div>
             </div>
         )
     }

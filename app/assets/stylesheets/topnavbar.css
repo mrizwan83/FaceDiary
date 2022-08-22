@@ -32,9 +32,9 @@
     background-color: #F0F2F5;
     padding: 10px;
     border-radius: 999px;
-    margin-left: 20px;
     height: 20px;
     width: 212px;
+    border: none;
 }
 
 .header-middle {
@@ -62,11 +62,3 @@
     height: 100vh;
 }
 
-.middle-feed {
-    flex: 1;
-    padding: 30px 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
