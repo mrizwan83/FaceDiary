@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../feed/header';
+import HeaderContainer from '../feed/header_container';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -10,7 +10,7 @@ class Profile extends React.Component {
     render() {
         return(
             <div>
-                <Header />
+                <HeaderContainer />
                 <div className='profile-page'>
                     <div className='profile-header-container'>
                     <div className='profile-header'>
