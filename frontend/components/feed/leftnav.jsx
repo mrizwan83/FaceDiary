@@ -8,7 +8,10 @@ class LeftNav extends React.Component{
     render() {
         return (
             <div className="sidebar">
-                <div className="sidebar-item">Name and Icon</div>
+                <div className="sidebar-item">
+                    <div id="sidebar-logo-pic"><img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" alt="" id="sidebar-logo-pic1" /></div>
+                    <div>Username</div>
+                </div>
                 <div className="sidebar-item"><img src="https://cdn0.iconfinder.com/data/icons/social-basic-2/32/Social_Media_Basic_Social_facebook__digital__Friends_-512.png" alt="" className="sidebar-logo"/>Friends</div>
                 <div className="sidebar-item"><img src="https://www.pngitem.com/pimgs/m/105-1052269_facebook-groups-facebook-groups-logo-png-transparent-png.png" alt="" className="sidebar-logo"/> Groups</div>
                 <div className="sidebar-item"><img src="https://progsoft.net/images/facebook-marketplace-icon-e15fd54ee9505ec7556f8178cfd93d344ea9fad9.png" alt="" className="sidebar-logo" /> Marketplace</div>
