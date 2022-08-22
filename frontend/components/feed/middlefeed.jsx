@@ -9,8 +9,8 @@ class MiddleFeed extends React.Component {
         return(
             <div className="middle-feed">
                 <div className="middle-post-top">
-                    <div className="post-icon-feed">icon</div>
-                    <div>Whats on your mind?</div>
+                    <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" alt="" id="post-pic-logo" />
+                    <input type="text" placeholder="What's on your mind?" id="post-input-feed"/>
                 </div>
             </div>
         )
