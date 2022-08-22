@@ -1,5 +1,5 @@
 .logo {
-    height: 40px;
+    height: 32px;
     padding: 10px 20px;
 }
 
@@ -13,14 +13,13 @@
 
 .header-parent {
     display: flex;
-    padding: 15px 20px;
     justify-content: space-between;
     position: sticky;
     background-color: white;
     z-index: 100;
     top: 0;
     box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.75);
-    height: 48px;
+    height: 56px;
 }
 
 .header-left {

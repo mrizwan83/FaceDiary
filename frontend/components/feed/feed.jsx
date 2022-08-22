@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Header from './header';
+import LeftNav from './leftnav';
 
 class Feed extends React.Component {
   constructor(props) {
@@ -9,9 +11,8 @@ class Feed extends React.Component {
   render() {
     return (
       <div>
-        <nav className="nav-bar">
-            <button onClick={this.props.logout}>Log Out</button>
-        </nav>
+        <Header />
+        <LeftNav />
     </div>
     )
   }

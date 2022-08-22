@@ -15,7 +15,7 @@ const App = () => {
       <Modal />
       <Switch>
         <ProtectedRoute path='/users/:userId' component={ProfileContainer} />
-        <ProtectedRoute path='/feed' component={HeaderContainer} />
+        <ProtectedRoute path='/feed' component={FeedContainer} />
         <AuthRoute exact path='/' component={SplashContainer} />
         <Redirect to='/feed' />
       </Switch>
