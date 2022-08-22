@@ -61,3 +61,12 @@
     background-color: #f1f2f5;
     height: 100vh;
 }
+
+.middle-feed {
+    flex: 1;
+    padding: 30px 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
