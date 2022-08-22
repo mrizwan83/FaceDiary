@@ -8,9 +8,16 @@ class MiddleFeed extends React.Component {
     render() {
         return(
             <div className="middle-feed">
+                <div className="middle-post">
                 <div className="middle-post-top">
                     <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" alt="" id="post-pic-logo" />
-                    <input type="text" placeholder="What's on your mind?" id="post-input-feed"/>
+                    <input type="text" placeholder="What's on your mind, User?" id="post-input-feed"/>
+                </div>
+
+                <div className="middle-post-bottom">
+                   
+                    <div className="middle-post-item"><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/11204-200.png" alt="" className="post-photo-logo" /><div>Photo</div></div>
+                </div>
                 </div>
             </div>
         )

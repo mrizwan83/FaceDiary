@@ -29,6 +29,11 @@
     width: 36px;
 }
 
+.post-photo-logo {
+    height: 22px;
+    width: 22px;
+}
+
 .sidebar {
     padding: 25px 10px;
     flex: 0.33;
@@ -39,7 +44,7 @@
     padding: 30px 150px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -53,8 +58,8 @@
 #sidebar-logo-pic1 {
     display: flex;
     justify-content: center;
-    height: 36px;
-    width: 36px;
+    height: 38px;
+    width: 38px;
     border-radius: 50%;
     border: 1px solid lightgray;
 }
@@ -62,18 +67,59 @@
 #post-pic-logo {
     display: flex;
     justify-content: center;
-    height: 40px;
-    width: 40px;
+    height: 38px;
+    width: 38px;
     border-radius: 50%;
     border: 1px solid lightgray;
+    margin-right: 12px;
 }
 
 #post-input-feed {
+    display: flex;
+    flex: 1;
     background-color: #F0F2F5;
-    padding: 10px;
+    padding: 8px 12px;
     border-radius: 999px;
-    height: 20px;
-    width: 212px;
     border: none;
+    font-size: 17px;
 }
 
+.middle-post {
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0ox 5px 7px -7px rgba(0, 0, 0, 0.75);
+    width: 100%;
+    padding: 12px 16px 10px;
+}
+
+.middle-post-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+.middle-post-item:hover {
+    background-color: #eff2f5;
+    border-radius: 10px;
+}
+
+.middle-post-top {
+    display: flex;
+    padding-bottom: 15px;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-post-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 8px;
+    border-top: 1px solid #E4E6EB;
+}
