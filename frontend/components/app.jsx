@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-
+import ProfileContainer from './profile/profile_container';
 import SplashContainer from './splash';
 // import NewsFeedContainer from './news_feed/news_feed_container';
 
@@ -14,7 +14,7 @@ const App = () => {
     <div>
       <Modal />
       <Switch>
-        {/* <ProtectedRoute path='/users/:userId' component={ProfileContainer} /> */}
+        <ProtectedRoute path='/users/:userId' component={ProfileContainer} />
         <ProtectedRoute path='/feed' component={HeaderContainer} />
         <AuthRoute exact path='/' component={SplashContainer} />
         <Redirect to='/feed' />

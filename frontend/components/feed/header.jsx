@@ -25,7 +25,7 @@ class Header extends React.Component {
             </div>
 
             <div className="header-right">
-            <button onClick={this.props.logout} className="logout"> <img src="https://freepikpsd.com/file/2019/10/logout-logo-png-Transparent-Images.png" alt="" className="logo"/></button>
+            <button onClick={this.props.logout} className="logout"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxQ9u8d_iLsoJi0a6Xt2ZbV9NYb0YxpONn0A&usqp=CAU" alt="" className="logo"/></button>
             </div>
             
             </div>
