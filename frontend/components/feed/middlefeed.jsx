@@ -16,7 +16,7 @@ class MiddleFeed extends React.Component {
 
                 <div className="middle-post-bottom">
                    
-                    <div className="middle-post-item"><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/11204-200.png" alt="" className="post-photo-logo" /><div>Photo</div></div>
+                    <div className="middle-post-item"><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/11204-200.png" alt="" className="post-photo-logo" /><div id="photo-button-feed">Photo</div></div>
                 </div>
                 </div>
             </div>

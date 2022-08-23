@@ -74,6 +74,10 @@
     margin-right: 12px;
 }
 
+.post-photo-logo {
+    margin-right: 6px;
+}
+
 #post-input-feed {
     display: flex;
     flex: 1;
@@ -122,4 +126,10 @@
     height: 40px;
     padding: 8px;
     border-top: 1px solid #E4E6EB;
+}
+
+#photo-button-feed {
+    color: #65676B;
+    font-size: 15px;
+    font-weight: 600;
 }
