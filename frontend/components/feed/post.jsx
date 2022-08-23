@@ -16,7 +16,7 @@ class Post extends React.Component {
                 </div>
 
                 <div className="post-bottom">
-                    <p>I wanna know who compared a string variable to an integer variable and got an emoji as a return value. Makes my mind go something like this (endless loop)</p>
+                    <p>I wanna know who thought of adding two empty arrays [] + [] to get an empty string "" return value. Makes my mind go something like this (endless loop)</p>
                 </div>
 
                 <div className="post-image">
