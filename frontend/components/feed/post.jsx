@@ -22,6 +22,15 @@ class Post extends React.Component {
                 <div className="post-image">
                     <img src="https://imageio.forbes.com/blogs-images/startswithabang/files/2016/10/parallel.jpg?format=jpg&width=960" alt="" />
                 </div>
+
+                <div className="post-options">
+                    <div className="post-option">
+                        <img src="https://cdn-icons-png.flaticon.com/512/25/25297.png" alt="" /> Like
+                    </div>
+                    <div className="post-option">
+                        <img src="https://icon-library.com/images/comment-icon-png/comment-icon-png-19.jpg" alt="" /> Comment
+                    </div>
+                </div>
             </div>
         )
     }
