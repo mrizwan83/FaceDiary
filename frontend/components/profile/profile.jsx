@@ -15,7 +15,10 @@ class Profile extends React.Component {
                     <div className='profile-header'>
                     <div className='cover-photo-container'>
                         <div className='cover-photo'>
-                            
+                            <div className='update-cover-photo'>
+                                <img src="https://toppng.com/uploads/preview/appareil-photo-icon-camera-icon-small-11553511694u4myfjqg7j.png" alt="" id="camera-logo" />
+                                Update Cover Photo
+                            </div>
                         </div>
 
                         <div className='profile-photo'>
