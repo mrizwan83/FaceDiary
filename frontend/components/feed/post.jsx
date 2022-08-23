@@ -16,11 +16,11 @@ class Post extends React.Component {
                 </div>
 
                 <div className="post-bottom">
-                    <p>I wanna know who thought of adding two empty arrays [] + [] to get an empty string "" return value. Makes my mind go something like this (endless loop)</p>
+                    <p>I wanna know who thought of adding two empty arrays [] + [] to get an empty string "" return value. WHY DOES EVERYTHING TAKE LONGER THAN EXPECTED.</p>
                 </div>
 
                 <div className="post-image">
-                    <img src="https://media1.giphy.com/media/gU25raLP4pUu4/giphy.gif" alt="" />
+                    <img src="https://preview.redd.it/v6lbjxdty8j91.png?width=640&crop=smart&auto=webp&s=13976ece19d3ca6b04bed9bb6e36bd5e1859efdb" alt="" />
                 </div>
 
                 <div className="post-options">
