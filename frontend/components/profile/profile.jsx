@@ -40,6 +40,15 @@ class Profile extends React.Component {
                         
                     </div>
                     </div>
+                    <div className="profile-body">
+                        <div className="profile-bio-section">
+                                This is where profile bio section goes
+                        </div>
+
+                        <div className="profile-post-container">
+                                this will house the right side for posts
+                        </div>
+                    </div>
                 </div>
             </div>
         )
