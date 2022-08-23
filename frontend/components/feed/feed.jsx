@@ -16,7 +16,7 @@ class Feed extends React.Component {
         <div className='app-body'>
         <LeftNav />
         <MiddleFeed />
-        <div className='feed-right'>placeholder for now</div>
+        <div className='feed-right'>Google Ads Will Go Here</div>
         </div>
     </div>
     )

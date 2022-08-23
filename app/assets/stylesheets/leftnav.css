@@ -90,13 +90,13 @@
 
 .middle-post {
     display: flex;
-    margin-top: 30px;
     flex-direction: column;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0ox 5px 7px -7px rgba(0, 0, 0, 0.75);
     width: 100%;
     padding: 12px 16px 10px;
+    border: 1px solid lightgray;
 }
 
 .middle-post-item {
