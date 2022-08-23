@@ -12,8 +12,8 @@ class Profile extends React.Component {
             <div>
                 <HeaderContainer />
                 <div className='profile-page'>
-                    <div className='profile-header-container'>
                     <div className='profile-header'>
+                    <div className='cover-photo-container'>
                         <div className='cover-photo'>
                             
                         </div>
