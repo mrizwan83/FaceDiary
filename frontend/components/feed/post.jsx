@@ -16,11 +16,11 @@ class Post extends React.Component {
                 </div>
 
                 <div className="post-bottom">
-                    <p>Do you believe in the multiverse? There can be a version of you out there doing exactly what you are doing, just slightly different.</p>
+                    <p>I wanna know who compared a string variable to an integer variable and got an emoji as a return value. Makes my mind go something like this (endless loop)</p>
                 </div>
 
                 <div className="post-image">
-                    <img src="https://imageio.forbes.com/blogs-images/startswithabang/files/2016/10/parallel.jpg?format=jpg&width=960" alt="" />
+                    <img src="https://media1.giphy.com/media/gU25raLP4pUu4/giphy.gif" alt="" />
                 </div>
 
                 <div className="post-options">
