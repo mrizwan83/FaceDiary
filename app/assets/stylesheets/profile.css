@@ -1,12 +1,9 @@
-.profile-header {
+/* .profile-header {
     height: 568px;
     width: 100vw;
     background-color: white;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .profile-page {
     min-height: 100vh;
@@ -31,7 +28,6 @@
 
 .update-cover-photo {
     display: flex;
-    position: relative;
     justify-content: center;
     align-items: center;
     background-color: white;
@@ -47,11 +43,63 @@
     width: 16px;
 }
 
+#camera-logo-2 {
+    height: 18px;
+    width: 18px;
+}
+
 .update-cover-photo:hover {
     background-color: #eff2f5;
     border-radius: 6px;
     cursor: pointer;
 }
 
+.profile-photo-container {
+    height: 186px;
+    width: 186px;
+    border-radius: 50%;
+    border: 3px solid white;
+    background-color: #D7D7D7;
+    margin-top: -84px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-left: 15px;
+}
+
+.update-profile-photo {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+
+.update-profile-photo:hover {
+    background-color: #eff2f5;
+    cursor: pointer;
+}
 
 
+#bottom-profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#profile-header {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 568px;
+    width: 100vw;
+    background-color: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
