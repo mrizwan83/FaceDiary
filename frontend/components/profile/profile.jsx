@@ -4,11 +4,34 @@ import HeaderContainer from '../feed/header_container';
 class Profile extends React.Component {
     constructor(props) {
         super(props);
+        this.openModal = this.openModal.bind(this);
+        this.displayUpdateInfo = this.displayUpdateInfo.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchAllUsers()
     }
+
+    displayUpdateInfo() {
+        if (this.props.currentUser.id === this.props.user.id) {
+            return (
+                <button className='edit-profile-b' onClick={this.openModal}>Update Info</button>                
+            )
+        } else {
+            null
+        }
+    }
+
+    openModal() {
+        this.props.otherForm('Update Info', this.props.currentUser.id)
+    }
+
+    handleName() {
+        return(
+        <div className='profile-username'>{this.props.user.firstname} {this.props.user.lastname}</div>
+        )
+    }
+
 
 
     render() {
@@ -38,7 +61,7 @@ class Profile extends React.Component {
                        
                         <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" alt="" className='profile-photo-container'/>
                         <div className="update-profile-photo"><img src="https://toppng.com/uploads/preview/appareil-photo-icon-camera-icon-small-11553511694u4myfjqg7j.png" alt="" id="camera-logo-2" /></div>
-                        <div className='profile-username'>{this.props.user.firstname} {this.props.user.lastname}</div>
+                        {this.handleName()}
                         </div>
                         
                         
@@ -70,7 +93,7 @@ class Profile extends React.Component {
                                 </div>
 
                                 
-                                <button className="edit-profile-b">Edit Profile</button>
+                                {this.displayUpdateInfo()}
 
 
                             </div>

@@ -56,7 +56,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const demoUser = { email: 'demo@demo.com', password: 'starwars' };
 
-  const speed = 1;
+  const speed = 25;
 
   if(this.state.email !== demoUser.email) {
   const inputemail = setInterval(() => {

@@ -11,7 +11,7 @@ const usersReducer = (state = {}, action) => {
       nextState[action.currentUser.id] = action.currentUser
       return nextState;
     case RECEIVE_USER:
-      nextState[action.user.user.id] = action.user.user
+      nextState[action.user.id] = action.user.user
       return nextState;
     default:
       return state;
