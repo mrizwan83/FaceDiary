@@ -4,12 +4,10 @@ import {fetchAllUsers, fetchUser} from '../../actions/session_actions'
 import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-    return {
-        // friends: state.entities.friendships,
-        user: state.entities.users[ownProps.match.params.userId],
-        users: state.entities.users
-    };
-};
+    return ({
+        user: state.entities.users[ownProps.match.params.userId]
+    })
+}
 
 const mapDispatchToProps = dispatch => {
     return {
