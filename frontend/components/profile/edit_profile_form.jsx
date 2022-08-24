@@ -20,6 +20,10 @@ class EditProfileForm extends React.Component {
         });
     }
 
+    // componentDidMount() {
+    //     this.props.fetchUser(this.props.user.id)
+    // }
+
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
@@ -28,7 +32,9 @@ class EditProfileForm extends React.Component {
         formData.append('user[city]', this.state.city);
         formData.append('user[school]', this.state.school);
         formData.append('user[work]', this.state.work);
-        this.props.updateUserInfo(formData).then(this.props.closeModal)
+        this.props.updateUserInfo(formData)
+        .then(this.props.closeModal)
+        // .then(this.props.history.push(`/users/${this.props.user.id}`))
     }
 
     render() {
