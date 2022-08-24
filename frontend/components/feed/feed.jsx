@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import LeftNav from './leftnav';
 import MiddleFeed from './middlefeed';
 import HeaderContainer from './header_container';
+import LeftnavContainer from './leftnav_container';
 
 class Feed extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class Feed extends React.Component {
       <div className='app'>
         <HeaderContainer />
         <div className='app-body'>
-        <LeftNav />
+        <LeftnavContainer />
         <MiddleFeed />
         <div className='feed-right'>Google Ads Will Go Here</div>
         </div>

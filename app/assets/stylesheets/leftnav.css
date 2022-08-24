@@ -133,3 +133,10 @@
     font-size: 15px;
     font-weight: 600;
 }
+
+#sidebar-name-link {
+    font-size: 15px;
+    color: black;
+    margin-left: 10px;
+    font-weight: 500;
+}
