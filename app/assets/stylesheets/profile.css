@@ -111,26 +111,29 @@
 .profile-body {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: #f1f2f5;
 }
 
 .profile-bio {
     margin-top: 20px;
-    height: 360px;
     width: 430px;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 0.75);
     padding: 20px;
     border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
+
 
 .profile-bio-section {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-right: 150px;
+    padding-right: 50px;
 }
 
 
@@ -150,5 +153,47 @@
     width: 100%;
     padding: 12px 16px 10px;
     border: 1px solid lightgray;
-    margin-top: -200px;
+}
+
+.bio-row {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    max-width: 430px;
+}
+
+.bio-row-icon {
+    height: 20px;
+    width: 20px;
+}
+
+.bio-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+}
+
+.bio-details {
+    font-size: 15px;
+}
+
+#profile-bio-about {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
+.edit-profile-b {
+    border-radius: 15px;
+    background-color: white;
+    color: black;
+}
+
+.edit-profile-b:hover {
+    background-color: #eff2f5;
+    cursor: pointer;
 }
