@@ -15,7 +15,6 @@
 
 .cover-photo-container {
     background-color: #D7D7D7;
-    max-width: 1250px;
     width: 1250px;
     height: 462px;
     border-bottom-left-radius: 10px;
@@ -202,9 +201,84 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 400px;
+    width: 450px;
     background: white;
     border-radius: 10px;
     border: 1px solid #cecccc;
     box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.75);
+}
+
+#edit-title {
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.edit-p-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-profile-labels {
+    padding: 10px;
+}
+
+#edit-submit {
+    width: 85%;
+    color: black;
+    padding: 10px 20px;
+    background-color: white;
+}
+
+#edit-submit:hover {
+    background-color: #f1f2f3;
+}
+
+.input-fields {
+    flex: 1;
+    width: 300px;
+}
+
+#t-area {
+    width: 280px;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#city {
+    margin-right: 22px;
+}
+
+#work {
+    margin-right: 13px;
+}
+
+.close-x-update-form {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    padding: 5px;
+    font-size: 30px;
+}
+
+#space {
+    background-color: white;
+    padding: 10px;
+}
+
+.close-x-update-form:hover {
+    background-color: #f1f2f3;
+    cursor: pointer;
+}
+
+#profile-bio-d {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    padding-bottom: 10px;
 }

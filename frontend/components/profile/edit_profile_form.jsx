@@ -1,66 +1,75 @@
-// import React from 'react';
+import React from 'react';
 
-// class EditProfileForm extends React.Component {
-//     constructor(props) {
-//         super(props),
-//         this.state = {
-//             bio: this.props.user.bio,
-//             city: this.props.user.city,
-//             school: this.props.user.school,
-//             work: this.props.user.work
-//         }
+class EditProfileForm extends React.Component {
+    constructor(props) {
+        super(props),
+        this.state = {
+            bio: this.props.user.bio,
+            city: this.props.user.city,
+            school: this.props.user.school,
+            work: this.props.user.work
+        }
 
-//         this.handleSubmit = this.handleSubmit.bind(this);
-//         this.update = this.update.bind(this);
-//     }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.update = this.update.bind(this);
+    }
 
-//     update(field) {
-//         return e => this.setState({
-//             [field]: e.currentTarget.value
-//         });
-//     }
+    update(field) {
+        return e => this.setState({
+            [field]: e.currentTarget.value
+        });
+    }
 
-//     // componentDidMount() {
-//     //     this.props.fetchUser(this.props.user.id)
-//     // }
+    // componentDidMount() {
+    //     this.props.fetchUser(this.props.user.id)
+    // }
 
-//     handleSubmit(e) {
-//         e.preventDefault();
-//         const formData = new FormData();
-//         formData.id = this.props.user.id;
-//         formData.append('user[bio]', this.state.bio);
-//         formData.append('user[city]', this.state.city);
-//         formData.append('user[school]', this.state.school);
-//         formData.append('user[work]', this.state.work);
-//         this.props.updateUserInfo(formData)
-//         .then(this.props.closeModal)
-//         // .then(this.props.history.push(`/users/${this.props.user.id}`))
-//     }
+    handleSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.id = this.props.user.id;
+        formData.append('user[bio]', this.state.bio);
+        formData.append('user[city]', this.state.city);
+        formData.append('user[school]', this.state.school);
+        formData.append('user[work]', this.state.work);
+        this.props.updateUserInfo(formData)
+        .then(this.props.closeModal)
+        // .then(this.props.history.push(`/users/${this.props.user.id}`))
+    }
 
-//     render() {
-//         return (
-//             <form className='update-info-form' onSubmit={this.handleSubmit}>
-//                 <span onClick={this.props.closeModal} className="close-x update-form">&times;</span>
-//                 <h3>Edit Profile </h3>
-//                 <label>About Me
-//                 <textarea  onChange={this.update('bio')} value={this.state.bio}></textarea>
-//                 </label>
+    render() {
+        return (
+            <form className='update-info-form' onSubmit={this.handleSubmit}>
+                <span onClick={this.props.closeModal} className="close-x-update-form">&times;</span>
+                <h3 id="edit-title">Edit Profile </h3>
+
+                <div className='edit-p-container'>
+                <div id='about' className='edit-profile-labels'>About Me</div>
+                <textarea id='t-area' placeholder='Write a Short Bio' onChange={this.update('bio')} value={this.state.bio}></textarea>
+                </div>
             
-//                 <label>Work
-//                 <input type="text" onChange={this.update('work')} value={this.state.work}/>
-//                 </label>
 
-//                 <label>City
-//                 <input type="text" onChange={this.update('city')} value={this.state.city}/>
-//                 </label>
+                <div className='edit-p-container'>
+                <div id='work' className='edit-profile-labels'>Work</div>
+                <input className='input-fields' type="text" onChange={this.update('work')} value={this.state.work}/>
+                </div>
+                
+                <div className='edit-p-container'>
+                <div id='city' className='edit-profile-labels'>City</div>
+                <input className='input-fields' type="text" onChange={this.update('city')} value={this.state.city}/>
+                </div>
+                <div className='edit-p-container'>
+                <div className='edit-profile-labels'>School</div>
+                <input className='input-fields' type="text" onChange={this.update('school')} value={this.state.school}/>
+                </div>
 
-//                 <label>School
-//                 <input type="text" onChange={this.update('school')} value={this.state.school}/>
-//                 </label>
-//                 <button>Submit</button>
-//             </form>
-//         );
-//     }
-// }
 
-// export default EditProfileForm;
+
+                <button id="edit-submit">Submit</button>
+                <div id="space"></div>
+            </form>
+        );
+    }
+}
+
+export default EditProfileForm;

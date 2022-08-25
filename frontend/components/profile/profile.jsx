@@ -68,10 +68,10 @@ class Profile extends React.Component {
                         <div className="profile-bio-section">
                             <div className="profile-bio">
                                 <div id="profile-bio-about">
-                                <h3>ABOUT</h3>
+                                <h3>ABOUT ME</h3>
                                 </div>
                                 
-                                <p>{this.props.user.bio}</p>
+                                <div id="profile-bio-d"><p>{this.props.user.bio}</p></div>
                                 
                                 <div className='bio-row'>
                                     <div className='bio-icon'><img src="https://cdn2.iconfinder.com/data/icons/facebook-ui-colored/48/JD-27-512.png" alt="" className='bio-row-icon' /></div>
