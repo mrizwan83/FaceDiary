@@ -4,9 +4,7 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/session_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import EditProfileContainer from '../profile/edit_profile_container';
-// import EditProfileContainer from '../profile/edit_profile_container';
-// import CreatePostContainer from '../post/create_post_container';
-// import EditPostContainer from '../post/edit_post_container';
+
 
 function Modal({ modal, closeModal }) {
   if (!modal) {

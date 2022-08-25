@@ -6,7 +6,6 @@ class Profile extends React.Component {
         super(props);
         this.openModal = this.openModal.bind(this);
         this.displayUpdateInfo = this.displayUpdateInfo.bind(this);
-        // this.handleName = this.handleName.bind(this)
     }
 
     componentDidMount() {
@@ -15,7 +14,7 @@ class Profile extends React.Component {
 
     displayUpdateInfo() {
         if (this.props.currentUser.id === this.props.user.id) {
-            return (
+            return(
                 <button className='edit-profile-b' onClick={this.openModal}>Update Info</button>                
             )
         } else {
@@ -27,13 +26,8 @@ class Profile extends React.Component {
         this.props.otherForm('Update Info', this.props.currentUser.id)
     }
 
-    // handleName() {
-    //     debugger
-    //     return(
-    //     <div className='profile-username'>{this.props.user.firstname} {this.props.user.lastname}</div>
-    //     )
-    // }
-
+   
+    
 
 
     render() {

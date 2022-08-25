@@ -23,4 +23,4 @@ const mapDispatchToProps = (dispatch) => {
     });
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(EditProfileForm))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(EditProfileForm));
