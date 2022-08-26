@@ -1,3 +1,4 @@
+import equal from 'fast-deep-equal';
 import React from 'react';
 
 class EditProfileForm extends React.Component {
@@ -11,7 +12,14 @@ class EditProfileForm extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderForm = this.renderForm.bind(this);
         this.update = this.update.bind(this);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (!equal(prevProps.user, this.props.user)) {
+            this.props.fetchAllUsers();
+        }
     }
 
     update(field) {
@@ -37,7 +45,7 @@ class EditProfileForm extends React.Component {
         // .then(this.props.history.push(`/users/${this.props.user.id}`))
     }
 
-    render() {
+    renderForm() {
         return (
             <form className='update-info-form' onSubmit={this.handleSubmit}>
                 <span onClick={this.props.closeModal} className="close-x-update-form">&times;</span>
@@ -69,6 +77,10 @@ class EditProfileForm extends React.Component {
                 <div id="space"></div>
             </form>
         );
+    }
+
+    render() {
+        return this.props.user && this.renderForm()
     }
 }
 

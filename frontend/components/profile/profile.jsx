@@ -1,11 +1,20 @@
 import React from 'react';
 import HeaderContainer from '../feed/header_container';
+import equal from 'fast-deep-equal';
 
 class Profile extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {users: this.props.users};
         this.openModal = this.openModal.bind(this);
         this.displayUpdateInfo = this.displayUpdateInfo.bind(this);
+        this.renderUser = this.renderUser.bind(this);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (!equal(prevProps.users, this.props.users)) {
+            this.props.fetchAllUsers();
+        }
     }
 
     componentDidMount() {
@@ -30,7 +39,7 @@ class Profile extends React.Component {
     
 
 
-    render() {
+    renderUser() {
         return(
             <div>
                 <HeaderContainer />
@@ -115,6 +124,10 @@ class Profile extends React.Component {
             
             </div>
         )
+    }
+
+    render() {
+        return this.props.user && this.renderUser();
     }
 }
 

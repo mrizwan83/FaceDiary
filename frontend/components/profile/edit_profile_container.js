@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import EditProfileForm from './edit_profile_form';
-import {fetchUser, updateUserInfo} from '../../actions/session_actions'
+import {fetchUser, fetchAllUsers, updateUserInfo} from '../../actions/session_actions'
 
 const mapStateToProps = (state, ownProps) => {
     return ({
@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return ({
+    return {
         fetchUser: (userId) => dispatch(fetchUser(userId)),
         fetchAllUsers: () => dispatch(fetchAllUsers()),
         updateUserInfo: (user) => {
@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => {
         },
         otherForm: (modal) => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal()),
-    });
+    };
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(EditProfileForm));
