@@ -18,11 +18,10 @@ class SessionForm extends React.Component {
     this.displaySignupName = this.displaySignupName.bind(this);
     this.displaySignupBirthday = this.displaySignupBirthday.bind(this);
     this.displaySignupHeader = this.displaySignupHeader.bind(this);
-    this.displayPasswordError = this.displayPasswordError.bind(this);
-    this.displayEmailError = this.displayEmailError.bind(this);
     this.openModal = this.openModal.bind(this)
     this.displaySignupGender = this.displaySignupGender.bind(this)
   }
+
 
   componentDidMount() {
     this.props.clearErrors();
@@ -39,6 +38,7 @@ class SessionForm extends React.Component {
       password: '',
     })
   }
+
 
   update(field) {
     return e => this.setState({
@@ -94,23 +94,19 @@ const animatePW = () => {
             <input type="text"
               onChange={this.update('firstname')}
               value={this.state.firstname}
-              className={this.props.errors.firstname ? 'login-input errors' : 'name-input'}
+              className={(this.firstNameError) ? 'login-input-errors' : 'name-input'}
               placeholder='First Name'
+           
             />
             <input type="text"
               onChange={this.update('lastname')}
               value={this.state.lastname}
               className={this.props.errors.lastname ? 'login-input errors' : 'name-input'}
               placeholder='Last Name'
+             
             />
           </div>
-
-          <div className={this.props.errors.firstname ? 'error-messages name' : null}
-            id="fname">{this.props.errors.firstname}
-          </div>
-          <div className={this.props.errors.lastname ? 'error-messages name' : null}
-            id="lname">{this.props.errors.lastname}
-          </div>
+          
         </div>
       )
     }
@@ -126,6 +122,7 @@ const animatePW = () => {
             onChange={this.update('birthday')}
             value={this.state.birthday}
             className={this.props.errors.birthday ? 'login-input errors' : 'login-input'}
+            
           />
           <div className={this.props.errors.birthday ? 'error-messages birthday' : 'error-messages'}>{this.props.errors.birthday}</div>
         </div>)
@@ -188,21 +185,7 @@ const animatePW = () => {
     }
   }
 
-  displayPasswordError() {
-    if (this.props.formType === 'Log In' && this.props.openModal) {
-      return null;
-    } else if (this.props.errors.password) {
-      return <div className='error-messages password'>{this.props.errors.password}</div>
-    }
-  }
-
-  displayEmailError() {
-    if (this.props.formType === 'Log In' && this.props.openModal) {
-      return null;
-    } else if (this.props.errors.email) {
-      return <div className='error-messages email'>{this.props.errors.email}</div>
-    }
-  }
+ 
 
   openModal() {
     this.setState({
@@ -213,39 +196,88 @@ const animatePW = () => {
     this.props.otherForm('Sign Up')
   }
 
+  
   render() {
+    let invalidLoginError, firstNameError, lastNameError, emailError, passwordError, birthdayError, genderError;
+  
+      if (this.props.errors.length > 0){
+          for (let error of this.props.errors){
+              switch (error[0]) {
+                  case "T":
+                      invalidLoginError = error;
+                      break;
+                  case "F":
+                      firstNameError = error;
+                      break;
+                  case "L":
+                      lastNameError = error;  
+                      break;
+                  case "E":
+                      emailError = error;                 
+                      break;
+                  case "P":
+                      passwordError = error;                
+                      break;
+                  case "B":
+                      birthdayError = error;             
+                      break;
+                  case "G":
+                      genderError = error;          
+                      break;
+                  default:
+                      return null;
+              };
+          };
+      };
+  
     return (
       <div className="login-form-container">
         {this.displaySignupHeader()}
-
         <form onSubmit={this.handleSubmit} className="login-form-box">
           {this.props.formType === 'Sign Up' ? <span onClick={this.props.closeModal} className="close-x">&times;</span> : null}
 
           <div className="login-form">
             {this.displaySignupName()}
-
+            <div className='name-errors'>
+            {(firstNameError) ? <div className='errors-backend'>{firstNameError}</div> : null}
+            {(lastNameError) ? <div className='errors-backend'>{lastNameError}</div> : null}
+            </div>
+          
             <input type="text"
               value={this.state.email}
               onChange={this.update('email')}
-              className={((this.props.errors.email && !this.props.openModal) || (this.props.errors.login && !this.props.openModal)) ? 'login-input errors' : 'login-input'}
+              className={(invalidLoginError) ? 'login-input-errors' : 'login-input'}
               placeholder='Email'
+              
             />
+            {(emailError) ? <div className='errors-backend'>{emailError}</div> : null}
+            
 
-            {this.displayEmailError()}
+           
             <div className='password-container'>
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
-                className={((this.props.errors.password && !this.props.openModal) || (this.props.errors.login && !this.props.openModal)) ? 'login-input errors' : 'login-input'}
+                className={(invalidLoginError) ? 'login-input-errors' : 'login-input'}
                 placeholder='Password'
+               
               />
+               {(passwordError) ? <div className='errors-backend'>{passwordError}</div> : null}
               {(this.props.formType === 'Log In' && !this.props.openModal && this.props.errors.login) ? <div className='error-messages login'>{this.props.errors.login}</div> : null}
             </div>
+            {(invalidLoginError) ? <div className='errors-backend'>{invalidLoginError}</div> : null}
 
-            {this.displayPasswordError()}
+          
             {this.displaySignupBirthday()}
+            {(birthdayError) ? <div className='errors-backend'>{birthdayError}</div> : null}
+
+
             {this.displaySignupGender()}
+            {(genderError) ? <div className='errors-backend'>{genderError}</div> : null}
+            
+           
             <button className="session-submit" type="submit">{this.props.formType}</button>
+            
           </div>
         </form>
 

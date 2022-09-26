@@ -72,7 +72,7 @@ button:hover {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width: 375px;
+  width: 400px;
   height: 350px
 }
 
@@ -141,8 +141,22 @@ input {
   font-size: 17px;
 }
 
-.login-input.errors {
+.login-input-errors {
   border: 1px solid red;
+  padding: 15px;
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+.errors-backend {
+  color: red;
+  font-size: 17px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.name-errors {
+  display: flex;
 }
 
 footer {
@@ -169,7 +183,7 @@ img {
   object-fit: cover;
 }
 
-/* tegegerfregrtgg*---------------- */
+
 .modal-background {
   position: fixed;
   top: 0;
@@ -253,7 +267,6 @@ span {
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 375px
 }
 
 .birthday {
@@ -265,7 +278,6 @@ span {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-bottom: 15px;
 }
 
 .gender-parent-container {
@@ -273,7 +285,6 @@ span {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 15px;
 }
 
 
@@ -288,118 +299,5 @@ span {
   margin-top: 2px;
 }
 
-.error-messages.birthday,
-.error-messages.fname,
-.error-messages.email,
-.error-messages.password {
-  position: absolute;
-  background: #be4b49;
-  color: white;
-  font-size: 13px;
-  width: 200px;
-  height: 35px;
-  border-radius: 3px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2
-}
-
-.error-messages.birthday:after,
-.error-messages.fname:after,
-.error-messages.email:after,
-.error-messages.password:after {
-  content: '';
-  position: absolute;
-  right: -8px;
-  top: 2px;
-  border-top: 15px solid transparent;
-  border-right: none;
-  border-bottom: 15px solid transparent;
-  border-left: 15px solid #be4b49;
-  z-index: -1
-}
-
-.error-messages.lname {
-  position: absolute;
-  background: #be4b49;
-  color: white;
-  font-size: 13px;
-  width: 170px;
-  height: 35px;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2
-}
-
-.error-messages.lname:after {
-  content: '';
-  position: absolute;
-  right: 163px;
-  top: 2px;
-  border-top: 15px solid transparent;
-  border-right: 15px solid #be4b49;
-  border-bottom: 15px solid transparent;
-  border-left: none;
-  z-index: -1
-}
-
-.error-messages.login {
-  position: absolute;
-  background: #be4b49;
-  color: white;
-  font-size: 13px;
-  width: 170px;
-  height: 41px;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-
-.error-messages.login:after {
-  content: '';
-  position: absolute;
-  right: -8px;
-  top: 4px;
-  border-top: 15px solid transparent;
-  border-right: none;
-  border-bottom: 15px solid transparent;
-  border-left: 15px solid #be4b49;
-}
-
-.error-messages.birthday {
-  top: 33%;
-  left: -59%
-}
-
-.error-messages.fname {
-  top: 14%;
-  left: -59%
-}
-
-.error-messages.lname {
-  top: 13%;
-  left: 105.5%
-}
-
-.error-messages.email {
-  top: 39%;
-  left: -48%
-}
-
-.error-messages.password {
-  top: 52.5%;
-  left: -48%
-}
-
-.error-messages.login {
-  top: -40%;
-  left: -50%
-}
 
 

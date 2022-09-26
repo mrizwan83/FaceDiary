@@ -5,7 +5,7 @@ class Api::SessionsController < ApplicationController
           login(@user)
           render "api/users/show"
         else
-          render json: ["The email or password you entered is incorrect"], status: 422
+          render json: ["The email or password you entered is incorrect"], status: 401
         end 
       end
   
@@ -14,7 +14,7 @@ class Api::SessionsController < ApplicationController
             logout!
             render json: {}
           else
-            render json: ['Not logged in'], status: 422
+            render json: ['Not logged in'], status: 40412
           end 
       end
 end
