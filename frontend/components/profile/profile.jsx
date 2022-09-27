@@ -7,15 +7,14 @@ class Profile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            user: this.props.user,
             photoFile: null,
             photoUrl: null,
         }
         this.openModal = this.openModal.bind(this);
         this.handleFile = this.handleFile.bind(this);
-        // this.handleFileCover = this.handleFileCover.bind(this);
         this.displayUpdateInfo = this.displayUpdateInfo.bind(this);
         this.renderUser = this.renderUser.bind(this);
-        this.clickFile = this.clickFile.bind(this);
         this.displayUploadCoverPhoto = this.displayUploadCoverPhoto.bind(this);
         this.displayUploadProfilePhoto = this.displayUploadProfilePhoto.bind(this);
     }
@@ -31,52 +30,6 @@ class Profile extends React.Component {
     }
 
     
-    clickFile(field) {
-        return(e) => {
-            if (field === 'upload-cover-btn') {
-                $('.upload-cover-btn').click();
-            } else {
-                $('.upload-prof-btn').click();
-            }
-        }
-        
-    }
-
-
- 
-    
-
-    // handleFile(e) {
-    //     this.setState({photoFile: e.currentTarget.files[0]});
-    //     const formData = new FormData();
-    //     if (this.state.photoFile) {
-    //     formData.append(`user[profile_photo]`, this.state.photoFile)
-    //     $.ajax({
-    //         url: `api/users/${this.props.currentUser.id}`,
-    //         method: 'PATCH',
-    //         data: formData,
-    //         contentType: false,
-    //         processData: false     
-    //     })
-    //     }
-    // }
-
-    // handleFileCover(e) {
-    //     this.setState({photoFile: e.currentTarget.files[0]});
-    //     const formData = new FormData();
-    //     if (this.state.photoFile) {
-    //     formData.append(`user[cover_photo]`, this.state.photoFile)
-    //     return $.ajax({
-    //         url: `api/users/${this.props.currentUser.id}`,
-    //         method: 'PATCH',
-    //         data: formData,
-    //         contentType: false,
-    //         processData: false     
-    //     })
-    //     }
-    // }
-
-    
     handleFile(field) {
         return(e) => {
             let file = e.currentTarget.files[0];
@@ -87,13 +40,18 @@ class Profile extends React.Component {
                 const formData = new FormData();
                 if (this.state.photoFile) {
                     formData.append(`user[${field}]`, file)
-                    return $.ajax({
+                    $.ajax({
                                 url: `api/users/${this.props.currentUser.id}`,
                                 method: 'PATCH',
                                 data: formData,
                                 contentType: false,
                                 processData: false     
-                            })
+                            }).then(response => {
+                                this.props.fetchUser(response.id).then(res => {
+                                        this.setState({user: res})
+                                    })
+                            }
+                            )
                 }
             }
 
@@ -123,9 +81,9 @@ class Profile extends React.Component {
         if (this.props.currentUser.id === this.props.user.id) {
             return (
                 <div className='cover-photo-btn-container'>
-                        <div className='camera-icon-cover' onClick={this.clickFile('upload-cover-btn')}></div>
-                    <div className='cover-photo-btn' onClick={this.clickFile('upload-cover-btn')}>Update Cover Photo
-                        <input className='upload-cover-btn' type="file" onChange={this.handleFile('cover_photo')} />
+                        
+                    <div className='cover-input'>Cover Photo 
+                        <input className='cover-btn' type="file" onChange={this.handleFile('cover_photo')} />
                     </div>
                 </div>
             )
@@ -138,9 +96,8 @@ class Profile extends React.Component {
         if (this.props.currentUser.id === this.props.user.id) {
             return (
                 <div className='profile-photo-btn-container'>
-                    <div className='profile-photo-btn' onClick={this.clickFile('upload-prof-btn')}>Update
-                        <div className='camera-icon-prof'></div>
-                        <input className='upload-prof-btn' type="file" onChange={this.handleFile('profile_photo')} />
+                    <div className='profile-input' >Profile Photo
+                        <input className='profile-btn' type="file" onChange={this.handleFile('profile_photo')} />
                     </div>
                 </div>
             )
@@ -154,7 +111,7 @@ class Profile extends React.Component {
     renderUser() {
         const renderCoverPhoto = (this.props.user.coverPhoto) ? <img className='cover-photo' src={`${this.props.user.coverPhoto}`} /> : <img className='cover-photo' src='https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png'/>
         const renderProfilePhoto = (this.props.user.profilePhoto) ? <img className='profile-photo' src={`${this.props.user.profilePhoto}`} /> : <img className='profile-photo' src='https://i.stack.imgur.com/l60Hf.png'/>
-        // console.log(this.state);
+        console.log(this.state);
         return(
             <div>
                 <HeaderContainer />
@@ -164,42 +121,15 @@ class Profile extends React.Component {
 
                 <div className='profile-cover-photo'>{renderCoverPhoto}</div>
                 {this.displayUploadCoverPhoto()}
+                <p className='profile-header-name'>{this.props.user.firstname} {this.props.user.lastname}</p>
                 <div className='profile-photo-container'>{renderProfilePhoto}</div>
+              
                 {this.displayUploadProfilePhoto()}
                 
-                <p className='profile-header-name'>{this.props.user.firstname} {this.props.user.lastname}</p>
+             
             </div>
 
 
-                    {/* <div id="profile-header">
-                    <div className='profile-header'>
-
-                 
-                    <div className='cover-photo-container'>
-
-                        {(this.props.user.coverPhoto) ? <img src={`${this.props.user.coverPhoto}`} /> : <div className='cover-photo' />}
-
-                           
-                            <div className='update-cover-photo'>
-                                <img src="https://toppng.com/uploads/preview/appareil-photo-icon-camera-icon-small-11553511694u4myfjqg7j.png" alt="" id="camera-logo" />
-                                Update Cover Photo
-                            </div>
-                           
-                        </div>
-                    
-
-                        
-                        {this.displayUploadProfilePhoto()}
-                        <div id="bottom-profile-header">
-                       
-                        <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" alt="" className='profile-photo-container'/>
-                        <div className="update-profile-photo"><img src="https://toppng.com/uploads/preview/appareil-photo-icon-camera-icon-small-11553511694u4myfjqg7j.png" alt="" id="camera-logo-2" /></div>
-                        <div className='profile-username'>{this.props.user.firstname} {this.props.user.lastname}</div>
-                        </div>
-                        
-                        
-                    </div>
-                    </div> */}
 
 
                     </div>
@@ -248,7 +178,7 @@ class Profile extends React.Component {
                             </div>
                         </div>
 
-                            <div>why isnt this working</div>
+                            <div>this is next</div>
                         </div>
                     </div>
             

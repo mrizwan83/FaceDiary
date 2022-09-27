@@ -54,7 +54,7 @@ class SessionForm extends React.Component {
 
   handleDemo(e) {
     e.preventDefault();
-    const demoUser = { email: 'demo@demo.com', password: 'starwars' };
+    const demoUser = { email: 'demo@appacademy.io', password: 'starwars' };
 
   const speed = 25;
 
