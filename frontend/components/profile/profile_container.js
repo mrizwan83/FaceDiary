@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
-import {fetchAllUsers, fetchUser} from '../../actions/session_actions'
+import {fetchAllUsers, fetchUser, updateUser} from '../../actions/session_actions'
 import {withRouter} from 'react-router-dom';
 import { openModal } from '../../actions/modal_actions';
 
@@ -17,7 +17,8 @@ const mapDispatchToProps = dispatch => {
     return {
         fetchUser: (userId) => dispatch(fetchUser(userId)),
         fetchAllUsers: () => dispatch(fetchAllUsers()),
-        otherForm: (modal) => dispatch(openModal(modal))
+        otherForm: (modal) => dispatch(openModal(modal)),
+        updateUser: (user) => dispatch(updateUser(user))
     }
 };
 

@@ -36,6 +36,17 @@
     border-radius: 6px;
     font-size: 15px;
 }
+.cover-photo {
+    background-color: #D7D7D7;
+    width: 1250px;
+    height: 462px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /* object-fit: cover;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end; */
+}
 
 #camera-logo {
     height: 16px;
@@ -78,6 +89,20 @@
     border: 1px solid black;
     margin-bottom: 5px;
     margin-right: 10px;
+}
+
+.profile-photo {
+    height: 186px;
+    width: 186px;
+    border-radius: 50%;
+    border: 3px solid white;
+    background-color: #D7D7D7;
+    /* margin-top: -84px;
+    margin-bottom: 16px; */
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    /* margin-left: 15px; */
 }
 
 .update-profile-photo:hover {
