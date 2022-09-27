@@ -1,15 +1,17 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
+import { logout, fetchUser } from '../../actions/session_actions';
 import MiddleFeed from './middlefeed';
 
-const mapStateToProps = ({ session, entities: { users } }) => {
-    return {
-        currentUser: users[session.id]
-    }
-};
+const mapStateToProps = (state) => {
+    return ({
+        users: state.entities.users
+    })
+}
+
 
 const mapDispatchToProps = dispatch => ({
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    fetchUser: (userId) => dispatch(fetchUser(userId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MiddleFeed);

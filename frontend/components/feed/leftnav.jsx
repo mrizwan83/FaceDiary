@@ -7,11 +7,12 @@ class LeftNav extends React.Component{
     }
 
     render() {
+        const renderPostPhoto = (this.props.currentUser.profilePhoto) ? <img id="sidebar-logo-pic1" src={`${this.props.currentUser.profilePhoto}`} /> : <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" id="sidebar-logo-pic1" />
         return (
             <div className="sidebar">
                 <Link to={`/users/${this.props.currentUser.id}`}>
                 <div className="sidebar-item-on">
-                    <div id="sidebar-logo-pic"><img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" alt="" id="sidebar-logo-pic1" /></div>
+                    <div id="sidebar-logo-pic">{renderPostPhoto}</div>
                     <div id="sidebar-name-link"> {this.props.currentUser.firstname} {this.props.currentUser.lastname}</div>
                 </div>
                 </Link>

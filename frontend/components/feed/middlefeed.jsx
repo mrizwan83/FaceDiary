@@ -4,15 +4,20 @@ import Post from "./post";
 class MiddleFeed extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            user: this.props.currentUser,
+        }
     }
 
+
     render() {
+        const renderPostPhoto = (this.props.currentUser.profilePhoto) ? <img id="post-pic-logo" src={`${this.props.currentUser.profilePhoto}`} /> : <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" id="post-pic-logo" />
         return(
             <div className="middle-feed">
                 <div className="middle-post">
                 <div className="middle-post-top">
-                    <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" alt="" id="post-pic-logo" />
-                    <input type="text" placeholder="What's on your mind, User?" id="post-input-feed"/>
+                   {renderPostPhoto}
+                    <input type="text" placeholder={`What's on your mind, ${this.props.currentUser.firstname}?`} id="post-input-feed"/>
                 </div>
 
                 <div className="middle-post-bottom">
