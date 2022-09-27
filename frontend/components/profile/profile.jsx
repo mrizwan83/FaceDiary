@@ -127,10 +127,6 @@ class Profile extends React.Component {
                 
              
             </div>
-
-
-
-
                     </div>
                     <div className="profile-body">
                         <div className="profile-bio-section">
