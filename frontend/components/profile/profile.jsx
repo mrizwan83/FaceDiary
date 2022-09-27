@@ -111,7 +111,6 @@ class Profile extends React.Component {
     renderUser() {
         const renderCoverPhoto = (this.props.user.coverPhoto) ? <img className='cover-photo' src={`${this.props.user.coverPhoto}`} /> : <img className='cover-photo' src='https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png'/>
         const renderProfilePhoto = (this.props.user.profilePhoto) ? <img className='profile-photo' src={`${this.props.user.profilePhoto}`} /> : <img className='profile-photo' src='https://i.stack.imgur.com/l60Hf.png'/>
-        console.log(this.state);
         return(
             <div>
                 <HeaderContainer />
