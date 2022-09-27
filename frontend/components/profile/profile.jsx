@@ -111,6 +111,7 @@ class Profile extends React.Component {
     renderUser() {
         const renderCoverPhoto = (this.props.user.coverPhoto) ? <img className='cover-photo' src={`${this.props.user.coverPhoto}`} /> : <img className='cover-photo' src='https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png'/>
         const renderProfilePhoto = (this.props.user.profilePhoto) ? <img className='profile-photo' src={`${this.props.user.profilePhoto}`} /> : <img className='profile-photo' src='https://i.stack.imgur.com/l60Hf.png'/>
+        const renderPostPhoto = (this.props.user.profilePhoto) ? <img id="post-pic-logo" src={`${this.props.user.profilePhoto}`} /> : <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" id="post-pic-logo" />
         return(
             <div>
                 <HeaderContainer />
@@ -163,8 +164,8 @@ class Profile extends React.Component {
                            
                             <div className="profile-middle-post">
                                 <div className="middle-post-top">
-                                    <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" alt="" id="post-pic-logo" />
-                                    <input type="text" placeholder="What's on your mind, User?" id="post-input-feed"/>
+                                    {renderPostPhoto}
+                                    <input type="text" placeholder={`What's on your mind, ${this.props.user.firstname}?`} id="post-input-feed"/>
                                 </div>
 
                             <div className="middle-post-bottom">
