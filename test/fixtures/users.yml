@@ -12,6 +12,10 @@
 #  updated_at      :datetime         not null
 #  firstname       :string           not null
 #  lastname        :string           not null
+#  bio             :text
+#  city            :string
+#  work            :string
+#  school          :string
 #
 
 # This model initially had no columns defined. If you add columns to the

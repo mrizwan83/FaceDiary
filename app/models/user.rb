@@ -12,6 +12,10 @@
 #  updated_at      :datetime         not null
 #  firstname       :string           not null
 #  lastname        :string           not null
+#  bio             :text
+#  city            :string
+#  work            :string
+#  school          :string
 #
 class User < ApplicationRecord
     validates :session_token, :password_digest, :firstname, :lastname, :email, :birthday, :gender, presence: true 

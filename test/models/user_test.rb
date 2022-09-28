@@ -12,6 +12,10 @@
 #  updated_at      :datetime         not null
 #  firstname       :string           not null
 #  lastname        :string           not null
+#  bio             :text
+#  city            :string
+#  work            :string
+#  school          :string
 #
 require 'test_helper'
 
