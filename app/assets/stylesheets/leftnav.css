@@ -88,6 +88,10 @@
     font-size: 17px;
 }
 
+#post-input-feed:hover {
+    cursor: pointer;
+}
+
 .middle-post {
     display: flex;
     flex-direction: column;

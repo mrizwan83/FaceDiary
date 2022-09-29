@@ -16,7 +16,7 @@ class Feed extends React.Component {
         <HeaderContainer />
         <div className='app-body'>
         <LeftnavContainer currentUser={this.props.currentUser}/>
-        <MiddleFeed currentUser={this.props.currentUser}/>
+        <MiddleFeed currentUser={this.props.currentUser} otherForm={this.props.otherForm}/>
         <div className='feed-right'>Google Ads Will Go Here</div>
         </div>
     </div>

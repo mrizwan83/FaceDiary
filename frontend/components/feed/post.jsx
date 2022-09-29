@@ -8,7 +8,7 @@ class Post extends React.Component {
         return(
             <div className="post">
                 <div className="post-top">
-                <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" alt="" id="post-pic-logo" />
+                <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" alt="" className="post-pic-logo" />
                 <div className="post-top-info">
                     <h3>Username</h3>
                     <p>Timestamps...</p>

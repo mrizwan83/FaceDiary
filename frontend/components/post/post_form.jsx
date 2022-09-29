@@ -41,20 +41,13 @@ class PostForm extends React.Component {
         }
         
         this.props.createPost(formData)
-
-        // $.ajax({
-        //     url: `api/posts`,
-        //     method: 'POST',
-        //     data: formData,
-        //     contentType: false,
-        //     processData: false     
-        // })
-
+        .then(this.props.closeModal());
         this.setState({
             body: '',
             photoFile: null,
             photoUrl: null,
         })
+        
     }
 
     update(field) {
@@ -83,7 +76,9 @@ class PostForm extends React.Component {
 
         return(
             <div className='inside-modal'>
+                <span onClick={this.props.closeModal} className="close-x-post-form">&times;</span>
                 <h3 id='title-post'>Create Post</h3>
+                
                 <div className='post-form-container'>
                     <form className='create-post-form'>
                         <div className='post-user-container'>
@@ -98,9 +93,9 @@ class PostForm extends React.Component {
                                 <input className='post-photo-btn' type="file" onChange={this.handleFile}/>
                             </div>
                         
-                        <div className='create-post-btn-container'>
+                        <div className='post-button-container'>
 
-                        <button className='create-post-btn' onClick={this.handleSubmit}>Post</button>
+                        <button className='post-button' onClick={this.handleSubmit}>Post</button>
                         </div>
                     </form>
                 </div>
