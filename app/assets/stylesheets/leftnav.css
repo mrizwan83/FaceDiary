@@ -64,7 +64,7 @@
     border: 1px solid lightgray;
 }
 
-#post-pic-logo {
+.post-pic-logo {
     display: flex;
     justify-content: center;
     height: 38px;

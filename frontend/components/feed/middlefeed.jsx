@@ -11,7 +11,7 @@ class MiddleFeed extends React.Component {
 
 
     render() {
-        const renderPostPhoto = (this.props.currentUser.profilePhoto) ? <img id="post-pic-logo" src={`${this.props.currentUser.profilePhoto}`} /> : <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" id="post-pic-logo" />
+        const renderPostPhoto = (this.props.currentUser.profilePhoto) ? <img className="post-pic-logo" src={`${this.props.currentUser.profilePhoto}`} /> : <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" className="post-pic-logo" />
         return(
             <div className="middle-feed">
                 <div className="middle-post">

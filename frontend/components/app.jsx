@@ -7,7 +7,7 @@ import SplashContainer from './splash';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal';
 import FeedContainer from './feed/feed_container';
-import HeaderContainer from './feed/header_container';
+
 
 const App = () => {
   return (
