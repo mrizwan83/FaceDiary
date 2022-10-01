@@ -1,5 +1,5 @@
 .post {
-    width: 100%;
+    width: 97.5%;
     margin-top: 15px;
     border-radius: 15px;
     background-color: white;
@@ -8,6 +8,15 @@
     border: 1px solid lightgray;
 }
 
+.post-body-content {
+    font-size: 24px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+
+.post-show-item {
+    padding: 2px;
+}
 .post-image > img {
     width: 100%;
 }
@@ -182,4 +191,5 @@
 .posts-middlefeed {
     display: flex;
     flex-direction: column-reverse;
+    margin-left: -15px;
 }

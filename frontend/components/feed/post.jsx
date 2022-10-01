@@ -22,7 +22,7 @@ class Post extends React.Component {
     handleAuthorName() {
         let author = (this.props.users[this.props.post.author_id]);
         if (author) {
-            return <h3>{author.firstname} {author.lastname}</h3>
+            return <h3 className="post-show-item">{author.firstname} {author.lastname}</h3>
         } else {
             return <h3></h3>
         }
@@ -35,16 +35,15 @@ class Post extends React.Component {
         return(
             <div className="post">
                 <div className="post-top">
-                {/* {renderPostAuthor} */}
                 {this.handlePostAuthor()}
                 <div className="post-top-info">
                     {this.handleAuthorName()}
-                    <p>{date}</p>
+                    <p className="post-show-item">{date}</p>
                 </div>
                 </div>
 
                 <div className="post-bottom">
-                    <p>{this.state.post.body}</p>
+                    <p className="post-body-content">{this.state.post.body}</p>
                 </div>
 
                 <div className="post-image">
