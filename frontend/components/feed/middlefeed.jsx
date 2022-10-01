@@ -9,7 +9,6 @@ class MiddleFeed extends React.Component {
             posts: this.props.posts
         }
         this.openPostModal = this.openPostModal.bind(this);
-        this.makePosts = this.makePosts.bind(this);
     }
 
 
@@ -18,14 +17,6 @@ class MiddleFeed extends React.Component {
         this.props.otherForm('Create Post', this.props.currentUser.id)
     }
 
-
-    makePosts() {
-        const postsToMap = (Object.values(this.props.posts));
-        postsToMap.map(post => {
-            return <PostContainer post={post} />
-        })
-    }
-    
 
     render() {
         

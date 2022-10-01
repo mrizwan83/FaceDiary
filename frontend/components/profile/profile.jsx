@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderContainer from '../feed/header_container';
 import equal from 'fast-deep-equal';
-
+import PostContainer from '../feed/post_container';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -18,6 +18,7 @@ class Profile extends React.Component {
         this.renderUser = this.renderUser.bind(this);
         this.displayUploadCoverPhoto = this.displayUploadCoverPhoto.bind(this);
         this.displayUploadProfilePhoto = this.displayUploadProfilePhoto.bind(this);
+        this.displayUserPosts = this.displayUserPosts.bind(this);
     }
 
     componentDidUpdate(prevProps) {
@@ -27,7 +28,8 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchAllUsers()
+        this.props.fetchAllUsers();
+        this.props.fetchPosts();
     }
 
     
@@ -110,6 +112,18 @@ class Profile extends React.Component {
             null
         }
     }
+
+    displayUserPosts() {
+           let results = (Object.values(this.props.posts)).filter(post => {
+                return post.author_id === this.props.user.id
+            })
+           return results.map(post => (
+                <PostContainer
+                key={post.id}
+                post={post}
+                />
+              ))
+    }
     
 
 
@@ -122,7 +136,7 @@ class Profile extends React.Component {
                 <HeaderContainer />
                 <div className='profile-page'>
 
-                <div className='profile-header'>
+                    <div className='profile-header'>
 
                 <div className='profile-cover-photo'>{renderCoverPhoto}</div>
                 {this.displayUploadCoverPhoto()}
@@ -130,10 +144,11 @@ class Profile extends React.Component {
                 <div className='profile-photo-container'>{renderProfilePhoto}</div>
               
                 {this.displayUploadProfilePhoto()}
-                
-             
-            </div>
                     </div>
+                </div>
+
+
+
                     <div className="profile-body">
                         <div className="profile-bio-section">
                             <div className="profile-bio">
@@ -166,8 +181,9 @@ class Profile extends React.Component {
                         </div>
 
                         <div className="profile-post-container">
-                           
+                        <div className='middle-post-create'>
                             <div className="profile-middle-post">
+                                
                                 <div className="middle-post-top">
                                     {renderPostPhoto}
                                     <input type="text" onClick={this.openPostModal} placeholder={`What's on your mind, ${this.props.user.firstname}?`} id="post-input-feed"/>
@@ -177,11 +193,19 @@ class Profile extends React.Component {
                    
                             <div className="middle-post-item" onClick={this.openPostModal}><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/11204-200.png" alt="" className="post-photo-logo" /><div id="photo-button-feed">Photo</div></div>
                             </div>
-                        </div>
+                            </div>
+                            </div>
 
+                           
                         </div>
                     </div>
-            
+                    <div className='allposts-profile'>
+
+
+{this.displayUserPosts()}
+
+
+ </div>
             </div>
         )
     }
