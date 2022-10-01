@@ -3,24 +3,52 @@ import React from "react";
 class Post extends React.Component {
     constructor(props){
         super(props)
+        this.state = {
+            post: this.props.post,
+        }
+        this.handlePostAuthor = this.handlePostAuthor.bind(this);
+        this.handleAuthorName = this.handleAuthorName.bind(this);
     }
+
+    handlePostAuthor() {
+        let author = (this.props.users[this.props.post.author_id]);
+        if (author && author.profilePhoto) {
+            return <img className="post-pic-logo" src={`${author.profilePhoto}`} />
+        } else {
+            return <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" className="post-pic-logo" />
+        }
+    }
+
+    handleAuthorName() {
+        let author = (this.props.users[this.props.post.author_id]);
+        if (author) {
+            return <h3>{author.firstname} {author.lastname}</h3>
+        } else {
+            return <h3></h3>
+        }
+    }
+
+
     render(){
+        let date = new Date(this.state.post.created_at).toLocaleString();
+        const renderPostPhoto = (this.state.post.postPhoto) ? <img  src={`${this.state.post.postPhoto}`} /> : null;
         return(
             <div className="post">
                 <div className="post-top">
-                <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" alt="" className="post-pic-logo" />
+                {/* {renderPostAuthor} */}
+                {this.handlePostAuthor()}
                 <div className="post-top-info">
-                    <h3>Username</h3>
-                    <p>Timestamps...</p>
+                    {this.handleAuthorName()}
+                    <p>{date}</p>
                 </div>
                 </div>
 
                 <div className="post-bottom">
-                    <p>I wanna know who thought of adding two empty arrays [] + [] to get an empty string "" return value. WHY DOES EVERYTHING TAKE LONGER THAN EXPECTED.</p>
+                    <p>{this.state.post.body}</p>
                 </div>
 
                 <div className="post-image">
-                    <img src="https://preview.redd.it/v6lbjxdty8j91.png?width=640&crop=smart&auto=webp&s=13976ece19d3ca6b04bed9bb6e36bd5e1859efdb" alt="" />
+                    {renderPostPhoto}
                 </div>
 
                 <div className="post-options">

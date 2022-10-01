@@ -1,13 +1,32 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import LeftNav from './leftnav';
-import MiddleFeed from './middlefeed';
+import MiddleFeedContainer from './middlefeed_container';
 import HeaderContainer from './header_container';
 import LeftnavContainer from './leftnav_container';
+
 
 class Feed extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      posts: this.props.posts,
+      users: this.props.users
+    }
+  }
+
+
+componentDidMount () {
+  this.props.fetchAllUsers()
+  .then(users => {
+    this.setState({
+      users: users
+    })
+  })
+    this.props.fetchPosts()
+    .then(posts => {
+      this.setState({
+        posts: posts
+      })
+    })
   }
 
   render() {
@@ -16,7 +35,7 @@ class Feed extends React.Component {
         <HeaderContainer />
         <div className='app-body'>
         <LeftnavContainer currentUser={this.props.currentUser}/>
-        <MiddleFeed currentUser={this.props.currentUser} otherForm={this.props.otherForm}/>
+        <MiddleFeedContainer currentUser={this.props.currentUser} otherForm={this.props.otherForm} posts={this.props.posts}/>
         <div className='feed-right'>Google Ads Will Go Here</div>
         </div>
     </div>

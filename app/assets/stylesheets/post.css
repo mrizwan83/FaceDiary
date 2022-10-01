@@ -178,3 +178,8 @@
 #photo-button-feed {
     margin-right: 5px;
 }
+
+.posts-middlefeed {
+    display: flex;
+    flex-direction: column-reverse;
+}

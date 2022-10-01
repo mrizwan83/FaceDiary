@@ -15,10 +15,7 @@ class PostForm extends React.Component {
         this.clickFile = this.clickFile.bind(this);
     }
 
-    componentDidMount () {
-        this.props.fetchPosts()
-    }
-
+ 
     handleFile(e) {
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();

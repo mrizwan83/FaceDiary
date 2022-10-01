@@ -27,6 +27,10 @@ class User < ApplicationRecord
     has_one_attached :profile_photo
     has_one_attached :cover_photo
 
+    has_many :posts,
+        foreign_key: :author_id,
+        class_name: :Post
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         return user if user && user.is_password?(password)
