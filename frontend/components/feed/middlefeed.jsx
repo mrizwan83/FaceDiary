@@ -12,14 +12,7 @@ class MiddleFeed extends React.Component {
         this.openPostModal = this.openPostModal.bind(this);
     }
 
-    componentDidUpdate() {
-        this.props.fetchPosts()
-        .then(posts => {
-          this.setState({
-            posts: posts
-          })
-        })
-    }
+   
    
 
     openPostModal() {

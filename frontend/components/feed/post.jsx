@@ -14,14 +14,6 @@ class Post extends React.Component {
         this.handleDelete = this.handleDelete.bind(this);
     }
 
-    componentDidMount() {
-        this.props.fetchPost(this.props.post.id)
-        .then(post => {
-            this.setState({
-                post: post
-            })
-        })
-    }
 
 
     handlePostAuthor() {
