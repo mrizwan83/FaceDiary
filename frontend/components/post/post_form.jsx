@@ -82,7 +82,7 @@ class PostForm extends React.Component {
                             <img className='post-pic-logo' src={this.props.currentUser.profilePhoto}/>
                             <div className='post-user-name'>{this.props.currentUser.firstname} {this.props.currentUser.lastname}</div>
                         </div>
-                        <textarea className='post-body' onChange={this.update('body')} value={this.state.body} placeholder={`What's on your mind ${this.props.currentUser.firstname}?`}></textarea>
+                        <textarea  className='post-body' onChange={this.update('body')} value={this.state.body} placeholder={`What's on your mind ${this.props.currentUser.firstname}?`}></textarea>
                         {showPreview}
                         
                             <div className='upload-photo-container' onClick={this.clickFile('post-photo-btn')}>
