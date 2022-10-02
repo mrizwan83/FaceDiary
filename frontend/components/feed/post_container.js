@@ -6,6 +6,7 @@ import Post from './post';
 const mapStateToProps = (state) => {
     return {
         users: state.entities.users,
+        currentUser: state.entities.users[state.session.id]
     }
 };
 

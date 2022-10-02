@@ -17,9 +17,27 @@
 
 .post-show-item {
     padding: 2px;
+    color: black;
 }
 .post-image > img {
     width: 100%;
+}
+
+.post-author-btn {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    align-items: center;
+}
+
+.post-edit-delete {
+    padding: 4px;
+}
+
+.post-edit-delete:hover {
+    background-color: #eff2f5;
+    cursor: pointer;
+    border-radius: 15px;
 }
 
 
