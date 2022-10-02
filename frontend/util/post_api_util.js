@@ -26,7 +26,7 @@ export const editPost = post => (
      $.ajax({
         url: `api/posts/${post.id}`,
         method: 'PATCH',
-        data: {post},
+        data: post,
         contentType: false,
         processData: false
     })

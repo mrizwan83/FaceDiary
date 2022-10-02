@@ -5,6 +5,7 @@ import LoginFormContainer from '../session_form/session_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import EditProfileContainer from '../profile/edit_profile_container';
 import CreatePostContainer from '../post/post_form_container'
+import PostEditContainer from '../post/post_edit_form_container';
 
 
 function Modal({ modal, closeModal }) {
@@ -25,9 +26,9 @@ function Modal({ modal, closeModal }) {
     case 'Create Post':
       component = <CreatePostContainer id={modal.id}/>;
       break;
-    // case 'Update Post':
-    //   component = <EditPostContainer id={modal.id} />;
-    //   break;
+    case 'Update Post':
+      component = <PostEditContainer id={modal.id} />;
+      break;
     default:
       return null;
   }

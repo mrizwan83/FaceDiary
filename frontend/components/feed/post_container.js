@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import { fetchPost } from '../../actions/post_actions';
+import { fetchPost, deletePost} from '../../actions/post_actions';
 import { fetchUser, fetchAllUsers } from '../../actions/session_actions';
+import { openModal } from '../../actions/modal_actions';
 import Post from './post';
 
 const mapStateToProps = (state) => {
@@ -13,7 +14,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => ({
     fetchPost: (postId) => dispatch(fetchPost(postId)),
     fetchUser: (userId) => dispatch(fetchUser(userId)),
-    fetchAllUsers: () => dispatch(fetchAllUsers())
+    fetchAllUsers: () => dispatch(fetchAllUsers()),
+  
+    deletePost: (postId) => dispatch(deletePost(postId)),
+    otherForm: (modal, postId) => dispatch(openModal(modal, postId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Post);

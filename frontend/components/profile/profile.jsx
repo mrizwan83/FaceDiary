@@ -186,7 +186,7 @@ class Profile extends React.Component {
                                 
                                 <div className="middle-post-top">
                                     {renderPostPhoto}
-                                    <input type="text" onClick={this.openPostModal} placeholder={`What's on your mind, ${this.props.user.firstname}?`} id="post-input-feed"/>
+                                    <input type="text" onClick={this.openPostModal} placeholder={`What's on your mind, ${this.props.currentUser.firstname}?`} id="post-input-feed"/>
                                 </div>
 
                             <div className="middle-post-bottom">

@@ -10,6 +10,7 @@ class Post extends React.Component {
         this.handlePostAuthor = this.handlePostAuthor.bind(this);
         this.handleAuthorName = this.handleAuthorName.bind(this);
         this.handleAuthorButtons = this.handleAuthorButtons.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     handlePostAuthor() {
@@ -39,6 +40,10 @@ class Post extends React.Component {
         }
     }
 
+    handleDelete(e){
+        e.preventDefault();
+        this.props.deletePost(this.props.post.id)
+    }
     
 
     handleAuthorButtons() {
@@ -46,8 +51,8 @@ class Post extends React.Component {
             return(
                 <div className="post-author-btn">
 
-                <div className="post-edit-delete">Edit</div>
-                <div className="post-edit-delete">Delete</div>
+                <div onClick={() => this.props.otherForm('Update Post', this.props.post.id)} className="post-edit-delete">Edit</div>
+                <div onClick={this.handleDelete} className="post-edit-delete">Delete</div>
 
                 </div>
             )
