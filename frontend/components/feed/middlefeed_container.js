@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { fetchAllUsers, fetchUser } from '../../actions/session_actions';
 import MiddleFeed from './middlefeed';
 import { openModal } from '../../actions/modal_actions';
+import { fetchPosts } from '../../actions/post_actions';
 
 const mapStateToProps = (state) => {
     return ({
@@ -16,6 +17,7 @@ const mapDispatchToProps = dispatch => {
         fetchUser: (userId) => dispatch(fetchUser(userId)),
         fetchAllUsers: () => dispatch(fetchAllUsers()),
         otherForm: (modal) => dispatch(openModal(modal)),
+        fetchPosts: () => dispatch(fetchPosts())
     }
 };
 

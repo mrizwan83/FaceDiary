@@ -16,6 +16,7 @@ class PostEditForm extends React.Component {
         this.clickFile = this.clickFile.bind(this);
     }
 
+
  
     handleFile(e) {
         const file = e.currentTarget.files[0];
@@ -42,7 +43,8 @@ class PostEditForm extends React.Component {
         
         console.log(formData)
         this.props.editPost(formData)
-        .then(this.props.closeModal());    
+        .then(this.props.closeModal())
+
     }
 
     update(field) {

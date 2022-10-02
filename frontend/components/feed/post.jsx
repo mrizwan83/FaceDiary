@@ -1,17 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 class Post extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            post: this.props.post,
+            post: "",
         }
         this.handlePostAuthor = this.handlePostAuthor.bind(this);
         this.handleAuthorName = this.handleAuthorName.bind(this);
         this.handleAuthorButtons = this.handleAuthorButtons.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
     }
+
+    componentDidMount() {
+        this.props.fetchPost(this.props.post.id)
+        .then(post => {
+            this.setState({
+                post: post
+            })
+        })
+    }
+
 
     handlePostAuthor() {
         let author = (this.props.users[this.props.post.author_id]);
@@ -61,8 +72,8 @@ class Post extends React.Component {
 
 
     render(){
-        let date = new Date(this.state.post.created_at).toLocaleString();
-        const renderPostPhoto = (this.state.post.postPhoto) ? <img  src={`${this.state.post.postPhoto}`} /> : null;
+        let date = new Date(this.props.post.created_at).toLocaleString();
+        const renderPostPhoto = (this.props.post.postPhoto) ? <img  src={`${this.props.post.postPhoto}`} /> : null;
         return(
             <div className="post">
                 
@@ -86,7 +97,7 @@ class Post extends React.Component {
                 </div>
 
                 <div className="post-bottom">
-                    <p className="post-body-content">{this.state.post.body}</p>
+                    <p className="post-body-content">{this.props.post.body}</p>
                 </div>
 
                 <div className="post-image">

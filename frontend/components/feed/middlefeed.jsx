@@ -1,6 +1,7 @@
 import React from "react";
 import PostContainer from "./post_container";
 
+
 class MiddleFeed extends React.Component {
     constructor(props) {
         super(props)
@@ -11,7 +12,15 @@ class MiddleFeed extends React.Component {
         this.openPostModal = this.openPostModal.bind(this);
     }
 
-
+    componentDidUpdate() {
+        this.props.fetchPosts()
+        .then(posts => {
+          this.setState({
+            posts: posts
+          })
+        })
+    }
+   
 
     openPostModal() {
         this.props.otherForm('Create Post', this.props.currentUser.id)

@@ -14,6 +14,7 @@ class Feed extends React.Component {
   }
 
 
+
 componentDidMount () {
   this.props.fetchAllUsers()
   .then(users => {
