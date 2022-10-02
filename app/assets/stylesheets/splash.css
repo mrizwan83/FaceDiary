@@ -203,8 +203,8 @@ img {
 
 .close-x {
   position: absolute;
-  left: 370px;
-  top: -5px;
+  left: 420px;
+  top: 5px;
   padding: 10px;
   font-size: 30px;
 }
