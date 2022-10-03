@@ -221,4 +221,5 @@
     padding: 25px;
     justify-content: center;
     align-items: center;
+    min-width: 950px;
 }

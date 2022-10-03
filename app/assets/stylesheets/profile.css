@@ -176,7 +176,7 @@
     align-items: center;
     justify-content: space-evenly;
     background-color: #f1f2f5;
-    min-width: 100vw;
+    min-width: 1000px;
     min-height: 340px;
 }
 
