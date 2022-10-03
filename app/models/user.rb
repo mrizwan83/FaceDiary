@@ -31,6 +31,14 @@ class User < ApplicationRecord
         foreign_key: :author_id,
         class_name: :Post
 
+    has_many :sent_requests,
+        foreign_key: :requester_id,
+        class_name: :Friend
+
+    has_many :received_requests,
+        foreign_key: :requestee_id,
+        class_name: :Friend
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         return user if user && user.is_password?(password)
