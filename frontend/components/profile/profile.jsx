@@ -128,12 +128,13 @@ class Profile extends React.Component {
 
 
     renderUser() {
+        
         const renderCoverPhoto = (this.props.user.coverPhoto) ? <img className='cover-photo' src={`${this.props.user.coverPhoto}`} /> : <img className='cover-photo' src='https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png'/>
         const renderProfilePhoto = (this.props.user.profilePhoto) ? <img className='profile-photo' src={`${this.props.user.profilePhoto}`} /> : <img className='profile-photo' src='https://i.stack.imgur.com/l60Hf.png'/>
         const renderPostPhoto = (this.props.user.profilePhoto) ? <img className="post-pic-logo" src={`${this.props.user.profilePhoto}`} /> : <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" className="post-pic-logo" />
         return(
             <div>
-                <HeaderContainer />
+                <HeaderContainer location={this.props.location.pathname}/>
                 <div className='profile-page'>
 
                     <div className='profile-header'>

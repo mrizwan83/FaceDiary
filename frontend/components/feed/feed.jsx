@@ -31,9 +31,10 @@ componentDidMount () {
   }
 
   render() {
+   
     return (
       <div className='app'>
-        <HeaderContainer />
+        <HeaderContainer users={this.props.users} location={this.props.location.pathname} />
         <div className='app-body'>
         <LeftnavContainer currentUser={this.props.currentUser}/>
         <MiddleFeedContainer currentUser={this.props.currentUser} otherForm={this.props.otherForm} posts={this.props.posts}/>

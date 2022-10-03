@@ -1,0 +1,27 @@
+.search-component {
+    max-block-size: -webkit-fill-available;
+}
+
+.results-search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+}
+
+.search-links {
+    padding: 3px;
+    color: black;
+}
+
+.searchresult-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+}
+
+.searchresult-item:hover {
+    cursor: pointer;
+    background-color: #eff2f5;
+}

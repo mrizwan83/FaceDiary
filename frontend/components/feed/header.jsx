@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-
+import SearchContainer from "../search/search_container";
 
 class Header extends React.Component {
+    
     render() {
         return(
             <div className="header-parent">
@@ -11,7 +12,8 @@ class Header extends React.Component {
             <Link to="/feed">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png" alt="" className="logo" />
             </Link>
-            <input type="text" placeholder="Search FaceDiary" className="searchbar"/>
+            {/* <input type="text" placeholder="Search FaceDiary" className="searchbar"/> */}
+            <SearchContainer location={this.props.location} />
             </div>
 
             <div className="header-middle">
