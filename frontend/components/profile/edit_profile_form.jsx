@@ -44,7 +44,7 @@ class EditProfileForm extends React.Component {
         return (
             <form className='update-info-form' onSubmit={this.handleSubmit}>
                 <span onClick={this.props.closeModal} className="close-x-update-form">&times;</span>
-                <h3 id="edit-title">Edit Profile </h3>
+                <h3 className='friends-length'>Edit Profile </h3>
 
                 <div className='edit-p-container'>
                 <div id='about' className='edit-profile-labels'>About Me</div>
@@ -54,16 +54,16 @@ class EditProfileForm extends React.Component {
 
                 <div className='edit-p-container'>
                 <div id='work' className='edit-profile-labels'>Work</div>
-                <input className='input-fields' type="text" onChange={this.update('work')} value={this.state.work}/>
+                <input className='input-fields' placeholder='Where do you Work?' type="text" onChange={this.update('work')} value={this.state.work}/>
                 </div>
                 
                 <div className='edit-p-container'>
                 <div id='city' className='edit-profile-labels'>City</div>
-                <input className='input-fields' type="text" onChange={this.update('city')} value={this.state.city}/>
+                <input className='input-fields' placeholder='Which City do you Live?' type="text" onChange={this.update('city')} value={this.state.city}/>
                 </div>
                 <div className='edit-p-container'>
                 <div className='edit-profile-labels'>School</div>
-                <input className='input-fields' type="text" onChange={this.update('school')} value={this.state.school}/>
+                <input className='input-fields' placeholder='Which School did you go to?' type="text" onChange={this.update('school')} value={this.state.school}/>
                 </div>
 
 

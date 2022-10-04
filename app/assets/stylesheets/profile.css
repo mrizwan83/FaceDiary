@@ -294,15 +294,17 @@
     color: black;
     padding: 10px 20px;
     background-color: white;
+    margin-top: 10px;
 }
 
 #edit-submit:hover {
-    background-color: #f1f2f3;
+    background-color: #eff2f5;
 }
 
 .input-fields {
     flex: 1;
-    width: 300px;
+    padding: 5px;
+    width: 290px;
 }
 
 #t-area {
