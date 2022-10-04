@@ -1,0 +1,49 @@
+.friendrequest-item {
+    padding: 5px;
+}
+
+.friendrequest-item:hover {
+    cursor: pointer;
+    background-color: #eff2f5;
+}
+
+.frq-btn {
+    margin-top: 20px;
+    background-color: #1B74E4;
+}
+
+.frq-btn:hover {
+    cursor: pointer;
+    background-color: rgb(0, 94, 255);
+}
+
+.friends-container {
+    margin-top: 20px;
+    width: 430px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 5px 7px -7px rgb(0 0 0 / 75%);
+    padding: 20px;
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.friends-length {
+    flex: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.399);
+    padding: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.frq-option {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}

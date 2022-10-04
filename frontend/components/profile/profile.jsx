@@ -2,6 +2,7 @@ import React from 'react';
 import HeaderContainer from '../feed/header_container';
 import equal from 'fast-deep-equal';
 import PostContainer from '../feed/post_container';
+import { Link } from 'react-router-dom';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -23,6 +24,7 @@ class Profile extends React.Component {
         this.handleFriendSubmit = this.handleFriendSubmit.bind(this);
         this.renderFriendRequest = this.renderFriendRequest.bind(this);
         this.renderAcceptFriend = this.renderAcceptFriend.bind(this);
+        this.deleteFriendRequest = this.deleteFriendRequest.bind(this);
     }
 
     componentDidUpdate(prevProps) {
@@ -141,7 +143,7 @@ class Profile extends React.Component {
     renderFriendRequest() {
         if (this.props.currentUser.id !== this.props.user.id) {
             return(
-                <button onClick={this.handleFriendSubmit}>Send Friend Request
+                <button className='frq-btn' onClick={this.handleFriendSubmit}>Send Friend Request
 
                 </button>
             )
@@ -171,6 +173,10 @@ class Profile extends React.Component {
         this.props.editFriend(formData)
    }
 
+   deleteFriendRequest(friendId) {
+    this.props.deleteFriend(friendId)
+   }
+
    
     
 
@@ -179,16 +185,11 @@ class Profile extends React.Component {
         const friendRequests = [];
         const friends = [];
         let alreadyFriends = false;
-        // const pendingFriends = false;
         Object.values(this.props.friends).forEach(friend => {
             if ((friend.accepted_request === false) && (friend.requestee_id === this.props.currentUser.id) && (this.props.currentUser.id === this.props.user.id)) {
                 friendRequests.push(friend)
-                // pendingFriends = true;
-                // alreadyFriends = true;
             } else if ((friend.accepted_request === true) && (friend.requestee_id === this.props.user.id) || 
             (friend.accepted_request === true) && (friend.requester_id === this.props.user.id)) {
-                // pendingFriends = false;
-                // alreadyFriends = true
                 if (friend.requestee_id === this.props.user.id) {
                 friends.push(friend.requester_id)
                 } else if (friend.requester_id === this.props.user.id) {
@@ -233,9 +234,10 @@ class Profile extends React.Component {
 
                     <div className="profile-body">
                         <div className="profile-bio-section">
+                        {alreadyFriends? null: this.renderFriendRequest()}
                             <div className="profile-bio">
                                 <div id="profile-bio-about">
-                                <h3>ABOUT ME</h3>
+                                <h3 className='friends-length'>ABOUT ME</h3>
                                 </div>
                                 
                                 <div id="profile-bio-d"><p>{this.props.user.bio}</p></div>
@@ -260,33 +262,58 @@ class Profile extends React.Component {
 
 
                             </div>
+                            <div className='friends-container'>
+                    <h1 className='friends-length'>Friends: {friends.length}</h1>
+
+{friends.map(userId => {
+    const friend = this.props.users[userId];
+    console.log(friend)
+    if (friend) {
+    const renderPostPhoto = (friend.profilePhoto) ? <img className="post-pic-logo" src={`${friend.profilePhoto}`} /> : <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" className="post-pic-logo" />
+    return(
+
+        <Link to={`/users/${friend.id}`} key={friend.id}>
+        <div  className="searchresult-item">
+        {renderPostPhoto}
+    <p className="search-links">
+        {friend.firstname} {friend.lastname}
+    </p>
+    </div>
+    </Link>
+    )
+    }
+})}
+
+
+            {friendRequests.map(friend => {
+            const f = this.props.users[friend.requester_id]
+            if (f) {
+                const renderFriendPhoto = (f.profilePhoto) ? <img className="post-pic-logo" src={`${f.profilePhoto}`} /> : <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" className="post-pic-logo" />
+            return(
+                <div ><h1 className='friends-length'>Friend Requests: {friendRequests.length}</h1><div  className="searchresult-item">
+                {renderFriendPhoto}
+                <p className="search-links">
+                {f.firstname} {f.lastname}
+            </p>
+            </div>
+            <div className='frq-option'>
+            <div className='friendrequest-item' onClick={() => this.acceptFriendRequest(friend.id)}>Accept</div>
+            <div className='friendrequest-item' onClick={() => this.deleteFriendRequest(friend.id)}>Decline</div>
+            </div>
+            </div>
+            )
+            }
+        })}
+
+
+                    </div>
                         </div>
 
                         <div className="profile-post-container">
 
 
 
-                        <div className='friend-request'>
-
-{alreadyFriends? null: this.renderFriendRequest()}
-
-{/* {(this.props.friends).map(friend => { 
-                if ((friend.requester_id === this.props.currentUser.id) && (friend.requestee_id === this.props.user.id)) {
-                    return(
-                        <div></div>
                        
-                    )
-                } else {
-                    return(
-                        <button onClick={this.handleFriendSubmit}>Send Friend Request
-        
-                        </button>
-                    )
-                }
-            })} */}
-
-
-                            </div>
 
 
                         <div className='middle-post-create'>
@@ -309,31 +336,6 @@ class Profile extends React.Component {
                         </div>
                     </div>
 
-                    <div className='friends-container'>
-                    <h1>Friends</h1>
-
-{friends.map(userId => {
-    const friend = this.props.users[userId];
-    console.log(friend)
-    return(
-        <div>
-           { friend.firstname}
-        </div>
-    )
-})}
-
-
-
-
-
-            {friendRequests.map(friend => {
-            return(
-                <div onClick={() => this.acceptFriendRequest(friend.id)}>Accept {friend.requester_id}</div>
-            )
-        })}
-
-
-                    </div>
 
 
                     <div className='allposts-profile'>
