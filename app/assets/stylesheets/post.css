@@ -71,9 +71,10 @@
     border-radius: 10px;
 }
 
-.post-option > img {
+.post-like-image {
     height: 18px;
     width: 18px;
+    margin-right: 3px;
 }
 
 .post-option {
@@ -84,6 +85,23 @@
     flex: 1;
     font-weight: 500;
     color: #65676b;
+    border-radius: 15px;
+}
+
+.post-option-like {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    flex: 1;
+    font-weight: 500;
+    color: black;
+    background-color: #2084fd;
+    border-radius: 15px;
+}
+
+.post-option-like:hover {
+    background-color: #1b74e4;
 }
 
 .image-preview {

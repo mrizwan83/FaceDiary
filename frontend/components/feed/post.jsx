@@ -112,6 +112,7 @@ class Post extends React.Component {
 
 
     render(){
+        const alreadyLiked = this.state.liked
         let date = new Date(this.props.post.created_at).toLocaleString();
         const renderPostPhoto = (this.props.post.postPhoto) ? <img  src={`${this.props.post.postPhoto}`} /> : null;
         let postsLikes =[];
@@ -150,14 +151,33 @@ class Post extends React.Component {
                     {renderPostPhoto}
                 </div>
 
-                <div>{postsLikes.length} Likes</div>
+
+            {alreadyLiked?  <div className="num-liked">{postsLikes.length} Likes</div> :  <div className="num-likes">{postsLikes.length} Likes</div>}
+
+
 
                 <div className="post-options">
+
+
+
+                    
+            {alreadyLiked?
+                    <div onClick={this.handleLike} className="post-option-like">
+                        <img className="post-like-image" src="https://cdn-icons-png.flaticon.com/512/25/25297.png" alt="" /> Like
+                    </div> :
                     <div onClick={this.handleLike} className="post-option">
-                        <img src="https://cdn-icons-png.flaticon.com/512/25/25297.png" alt="" /> Like
-                    </div>
+                        <img className="post-like-image" src="https://cdn-icons-png.flaticon.com/512/25/25297.png" alt="" /> Like
+                    </div>}
+
+
+
+
+
+
+
+
                     <div className="post-option">
-                        <img src="https://icon-library.com/images/comment-icon-png/comment-icon-png-19.jpg" alt="" /> Comment
+                        <img className="post-like-image" src="https://icon-library.com/images/comment-icon-png/comment-icon-png-19.jpg" alt="" /> Comment
                     </div>
                 </div>
             </div>
