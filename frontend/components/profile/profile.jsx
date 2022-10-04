@@ -290,12 +290,15 @@ class Profile extends React.Component {
             if (f) {
                 const renderFriendPhoto = (f.profilePhoto) ? <img className="post-pic-logo" src={`${f.profilePhoto}`} /> : <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" className="post-pic-logo" />
             return(
-                <div ><h1 className='friends-length'>Friend Requests: {friendRequests.length}</h1><div  className="searchresult-item">
-                {renderFriendPhoto}
-                <p className="search-links">
-                {f.firstname} {f.lastname}
-            </p>
-            </div>
+                <div ><h1 className='friends-length'>Friend Requests: {friendRequests.length}</h1>
+                 <Link to={`/users/${f.id}`} key={f.id}>
+                    <div  className="searchresult-item">
+                            {renderFriendPhoto}
+                         <p className="search-links">
+                             {f.firstname} {f.lastname}
+                         </p>
+                     </div>
+                     </Link>
             <div className='frq-option'>
             <div className='friendrequest-item' onClick={() => this.acceptFriendRequest(friend.id)}>Accept</div>
             <div className='friendrequest-item' onClick={() => this.deleteFriendRequest(friend.id)}>Decline</div>
