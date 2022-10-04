@@ -6,12 +6,21 @@ class Post extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            post: "",
+            post: this.props.post,
+            liked: false,
+            currentUserLike: null,
         }
         this.handlePostAuthor = this.handlePostAuthor.bind(this);
         this.handleAuthorName = this.handleAuthorName.bind(this);
         this.handleAuthorButtons = this.handleAuthorButtons.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+        this.handleLike = this.handleLike.bind(this);
+        this.handleLikeDelete = this.handleLikeDelete.bind(this);
+        this.handleLikeStatus = this.handleLikeStatus.bind(this);
+    }
+
+    componentDidMount() {
+        this.handleLikeStatus()
     }
 
 
@@ -62,10 +71,55 @@ class Post extends React.Component {
         }
     }
 
+    handleLikeDelete() {
+        let showlike;
+        Object.values(this.props.likes).forEach(like => {
+            if (like.liker_id === this.props.currentUser.id && like.post_id === this.props.post.id) {
+                showlike = like
+            }
+        })
+        this.props.deleteLike(showlike.id)
+    }
+
+    handleLike(e) {
+        e.preventDefault();
+        if (this.state.liked === false) {
+        const formData = new FormData();
+        formData.append('like[liker_id]', this.props.currentUser.id);
+        formData.append('like[post_id]', this.props.post.id);
+        this.props.createLike(formData)
+        this.setState({
+            liked: true
+        })
+        } else if (this.state.liked === true) {
+            this.handleLikeDelete()
+            this.setState({
+                liked: false
+            })
+        }
+    }
+
+    handleLikeStatus() {
+        Object.values(this.props.likes).forEach(like => {
+            if (like.liker_id === this.props.currentUser.id && like.post_id === this.props.post.id) {
+                this.setState({
+                    currentUserLike: like,
+                    liked: true
+                })
+            }
+        })
+    }
+
 
     render(){
         let date = new Date(this.props.post.created_at).toLocaleString();
         const renderPostPhoto = (this.props.post.postPhoto) ? <img  src={`${this.props.post.postPhoto}`} /> : null;
+        let postsLikes =[];
+        Object.values(this.props.likes).forEach(like => {
+            if (like.post_id === this.props.post.id) {
+                postsLikes.push(like)
+            }
+        })
         return(
             <div className="post">
                 
@@ -96,8 +150,10 @@ class Post extends React.Component {
                     {renderPostPhoto}
                 </div>
 
+                <div>{postsLikes.length} Likes</div>
+
                 <div className="post-options">
-                    <div className="post-option">
+                    <div onClick={this.handleLike} className="post-option">
                         <img src="https://cdn-icons-png.flaticon.com/512/25/25297.png" alt="" /> Like
                     </div>
                     <div className="post-option">

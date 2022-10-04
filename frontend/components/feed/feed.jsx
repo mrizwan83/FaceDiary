@@ -35,6 +35,12 @@ componentDidMount () {
         friends: friends
       })
     })
+    this.props.fetchLikes()
+    .then(likes => {
+      this.setState({
+        likes: likes
+      })
+    })
   }
   
 

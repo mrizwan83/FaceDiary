@@ -5,6 +5,7 @@ import { openModal } from '../../actions/modal_actions';
 import { fetchPosts } from '../../actions/post_actions';
 import { fetchAllUsers } from '../../actions/session_actions';
 import { fetchFriends } from '../../actions/friend_actions';
+import { fetchLikes } from '../../actions/like_actions';
 
 
 const mapStateToProps = ({ session, entities: { users, posts, friends } }) => {
@@ -21,7 +22,8 @@ const mapDispatchToProps = dispatch => ({
     otherForm: (modal) => dispatch(openModal(modal)),
     fetchPosts: () => dispatch(fetchPosts()),
     fetchAllUsers: () => dispatch(fetchAllUsers()),
-    fetchFriends: () => dispatch(fetchFriends())
+    fetchFriends: () => dispatch(fetchFriends()),
+    fetchLikes: () => dispatch(fetchLikes())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Feed);

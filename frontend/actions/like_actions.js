@@ -38,7 +38,7 @@ export const createLike = (like) => dispatch => (
 
 
 
-export const deletelike = (likeId) => dispatch => (
+export const deleteLike = (likeId) => dispatch => (
     LikeApiUtil.deleteLike(likeId)
         .then(() => dispatch(removeLike(likeId)))
 );
