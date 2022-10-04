@@ -41,7 +41,7 @@ class PostEditForm extends React.Component {
             formData.append('post[photo]', this.state.photoFile)
         }
         
-        console.log(formData)
+      
         this.props.editPost(formData)
         .then(this.props.closeModal())
 

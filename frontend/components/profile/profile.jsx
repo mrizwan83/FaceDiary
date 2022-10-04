@@ -10,6 +10,7 @@ class Profile extends React.Component {
             user: this.props.user,
             photoFile: null,
             photoUrl: null,
+            friendRequests: []
         }
         this.openModal = this.openModal.bind(this);
         this.openPostModal = this.openPostModal.bind(this);
@@ -19,6 +20,9 @@ class Profile extends React.Component {
         this.displayUploadCoverPhoto = this.displayUploadCoverPhoto.bind(this);
         this.displayUploadProfilePhoto = this.displayUploadProfilePhoto.bind(this);
         this.displayUserPosts = this.displayUserPosts.bind(this);
+        this.handleFriendSubmit = this.handleFriendSubmit.bind(this);
+        this.renderFriendRequest = this.renderFriendRequest.bind(this);
+        this.renderAcceptFriend = this.renderAcceptFriend.bind(this);
     }
 
     componentDidUpdate(prevProps) {
@@ -30,6 +34,7 @@ class Profile extends React.Component {
     componentDidMount() {
         this.props.fetchAllUsers();
         this.props.fetchPosts();
+        this.props.fetchFriends();
     }
 
     
@@ -124,11 +129,87 @@ class Profile extends React.Component {
                 />
               ))
     }
+
+    handleFriendSubmit() {
+        const formData = new FormData();
+        formData.append('friend[requestee_id]', this.props.user.id);
+        formData.append('friend[requester_id]', this.props.currentUser.id);
+        this.props.createFriend(formData)
+    }
+
+
+    renderFriendRequest() {
+        if (this.props.currentUser.id !== this.props.user.id) {
+            return(
+                <button onClick={this.handleFriendSubmit}>Send Friend Request
+
+                </button>
+            )
+        }
+    }
+
+    renderAcceptFriend() {
+        let friendRequests = [];
+        this.props.friends.forEach(friend => {
+            if ((friend.accepted_request === false) && (friend.requestee_id === this.props.currentUser.id) && (this.props.currentUser.id === this.props.user.id)) {
+                friendRequests.push(friend)
+            }
+        });
+
+
+        friendRequests.map(friend => {
+            return(
+                <div>Accept {friend.requester_id}</div>
+            )
+        })
+    }
+   
+   acceptFriendRequest(friendId) {
+        const formData = new FormData();
+        formData.id = friendId;
+        formData.append('friend[accepted_request]', true);
+        this.props.editFriend(formData)
+   }
+
+   
     
 
 
     renderUser() {
+        const friendRequests = [];
+        const friends = [];
+        let alreadyFriends = false;
+        // const pendingFriends = false;
+        Object.values(this.props.friends).forEach(friend => {
+            if ((friend.accepted_request === false) && (friend.requestee_id === this.props.currentUser.id) && (this.props.currentUser.id === this.props.user.id)) {
+                friendRequests.push(friend)
+                // pendingFriends = true;
+                // alreadyFriends = true;
+            } else if ((friend.accepted_request === true) && (friend.requestee_id === this.props.user.id) || 
+            (friend.accepted_request === true) && (friend.requester_id === this.props.user.id)) {
+                // pendingFriends = false;
+                // alreadyFriends = true
+                if (friend.requestee_id === this.props.user.id) {
+                friends.push(friend.requester_id)
+                } else if (friend.requester_id === this.props.user.id) {
+                    friends.push(friend.requestee_id)
+                }
+            } else if (((friend.accepted_request === false) && (friend.requester_id === this.props.currentUser.id) && (friend.requestee_id === this.props.user.id))
+            ||((friend.accepted_request === false) && (friend.requestee_id === this.props.currentUser.id) && (friend.requester_id === this.props.user.id))) {
+                alreadyFriends = true;
+            }  if (((friend.accepted_request === true) && (friend.requester_id === this.props.currentUser.id) && (friend.requestee_id === this.props.user.id))
+            ||((friend.accepted_request === true) && (friend.requestee_id === this.props.currentUser.id) && (friend.requester_id === this.props.user.id))) {
+                alreadyFriends = true;
+            }  if (((friend.accepted_request === true) && (friend.requestee_id === this.props.user.id && friend.requester_id === this.props.currentUser.id)) || 
+            ((friend.accepted_request === true) && (friend.requester_id === this.props.user.id && friend.requestee_id === this.props.currentUser.id))) {
+                alreadyFriends = true
+            } 
+        })
+
+        console.log(friends)
+  
         
+
         const renderCoverPhoto = (this.props.user.coverPhoto) ? <img className='cover-photo' src={`${this.props.user.coverPhoto}`} /> : <img className='cover-photo' src='https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png'/>
         const renderProfilePhoto = (this.props.user.profilePhoto) ? <img className='profile-photo' src={`${this.props.user.profilePhoto}`} /> : <img className='profile-photo' src='https://i.stack.imgur.com/l60Hf.png'/>
         const renderPostPhoto = (this.props.user.profilePhoto) ? <img className="post-pic-logo" src={`${this.props.user.profilePhoto}`} /> : <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" className="post-pic-logo" />
@@ -182,6 +263,32 @@ class Profile extends React.Component {
                         </div>
 
                         <div className="profile-post-container">
+
+
+
+                        <div className='friend-request'>
+
+{alreadyFriends? null: this.renderFriendRequest()}
+
+{/* {(this.props.friends).map(friend => { 
+                if ((friend.requester_id === this.props.currentUser.id) && (friend.requestee_id === this.props.user.id)) {
+                    return(
+                        <div></div>
+                       
+                    )
+                } else {
+                    return(
+                        <button onClick={this.handleFriendSubmit}>Send Friend Request
+        
+                        </button>
+                    )
+                }
+            })} */}
+
+
+                            </div>
+
+
                         <div className='middle-post-create'>
                             <div className="profile-middle-post">
                                 
@@ -197,9 +304,38 @@ class Profile extends React.Component {
                             </div>
                             </div>
 
+
                            
                         </div>
                     </div>
+
+                    <div className='friends-container'>
+                    <h1>Friends</h1>
+
+{friends.map(userId => {
+    const friend = this.props.users[userId];
+    console.log(friend)
+    return(
+        <div>
+           { friend.firstname}
+        </div>
+    )
+})}
+
+
+
+
+
+            {friendRequests.map(friend => {
+            return(
+                <div onClick={() => this.acceptFriendRequest(friend.id)}>Accept {friend.requester_id}</div>
+            )
+        })}
+
+
+                    </div>
+
+
                     <div className='allposts-profile'>
 
 

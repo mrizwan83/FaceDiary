@@ -9,7 +9,8 @@ class Feed extends React.Component {
     super(props)
     this.state = {
       posts: this.props.posts,
-      users: this.props.users
+      users: this.props.users,
+      friends: this.props.friends
     }
   }
 
@@ -28,7 +29,14 @@ componentDidMount () {
         posts: posts
       })
     })
+    this.props.fetchFriends()
+    .then(friends => {
+      this.setState({
+        friends: friends
+      })
+    })
   }
+  
 
   render() {
    
