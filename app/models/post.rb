@@ -19,5 +19,6 @@ class Post < ApplicationRecord
 
     has_many :likes,
     foreign_key: :post_id,
-    class_name: :Like
+    class_name: :Like,
+    dependent: :destroy
 end
