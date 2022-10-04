@@ -68,7 +68,7 @@ class EditProfileForm extends React.Component {
 
 
 
-                <button id="edit-submit">Submit</button>
+                <button className="post-button">Submit</button>
                 <div id="space"></div>
             </form>
         );
