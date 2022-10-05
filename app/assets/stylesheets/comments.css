@@ -6,3 +6,9 @@
     background-color: #f1f2f3;
     border: none;
 }
+
+.post-likes-comments {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

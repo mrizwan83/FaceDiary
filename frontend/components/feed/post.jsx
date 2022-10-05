@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CreateCommentContainer from "../comment/create_comment_form_container";
+import CommentContainer from "../comment/comment_container";
 
 class Post extends React.Component {
     constructor(props){
@@ -9,6 +10,7 @@ class Post extends React.Component {
             post: this.props.post,
             liked: false,
             currentUserLike: null,
+            commentOpen: false,
         }
         this.handlePostAuthor = this.handlePostAuthor.bind(this);
         this.handleAuthorName = this.handleAuthorName.bind(this);
@@ -17,6 +19,7 @@ class Post extends React.Component {
         this.handleLike = this.handleLike.bind(this);
         this.handleLikeDelete = this.handleLikeDelete.bind(this);
         this.handleLikeStatus = this.handleLikeStatus.bind(this);
+        this.handleComment = this.handleComment.bind(this);
     }
 
     componentDidMount() {
@@ -110,9 +113,23 @@ class Post extends React.Component {
         })
     }
 
+    handleComment(e) {
+        e.preventDefault();
+        if (this.state.commentOpen === false) {
+            this.setState({
+                commentOpen: true,
+            })
+        } else {
+            this.setState({
+                commentOpen: false,
+            })
+        }
+    }
+
 
     render(){
         const alreadyLiked = this.state.liked
+        const commentOpened = this.state.commentOpen
         let date = new Date(this.props.post.created_at).toLocaleString();
         const renderPostPhoto = (this.props.post.postPhoto) ? <img  src={`${this.props.post.postPhoto}`} /> : null;
         let postsLikes =[];
@@ -151,11 +168,11 @@ class Post extends React.Component {
                     {renderPostPhoto}
                 </div>
 
-
+                <div className="post-likes-comments">
             {alreadyLiked?  <div className="num-liked">{postsLikes.length} Likes</div> :  <div className="num-likes">{postsLikes.length} Likes</div>}
 
-
-
+            <div>{this.props.post.comments.length} Comments</div>
+                </div>
                 <div className="post-options">
 
 
@@ -176,12 +193,14 @@ class Post extends React.Component {
 
 
 
-                    <div className="post-option">
-                        <img className="post-like-image" src="https://icon-library.com/images/comment-icon-png/comment-icon-png-19.jpg" alt="" /> Comment
+                    <div onClick={this.handleComment} className="post-option">
+                        <img className="post-like-image" src="https://icon-library.com/images/comment-icon-png/comment-icon-png-19.jpg" alt="" /> Comments
                     </div>
                 </div>
 
-
+            {commentOpened? this.props.post.comments.map(comment => {
+                return <CommentContainer key={comment.id} comment={comment} post={this.props.post} creater={this.props.currentUser}/>
+            }) : null}
 
             <CreateCommentContainer post={this.props.post}/>
 
