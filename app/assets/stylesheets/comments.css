@@ -20,3 +20,9 @@
     flex: 1;
     border-radius: 10px;
 }
+
+.comment-display-edit-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
