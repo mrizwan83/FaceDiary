@@ -5,6 +5,8 @@ import {withRouter} from 'react-router-dom';
 import { openModal } from '../../actions/modal_actions';
 import { fetchPosts } from '../../actions/post_actions';
 import { createFriend, fetchFriends, editFriend, deleteFriend } from '../../actions/friend_actions';
+import { fetchLikes } from '../../actions/like_actions';
+import { fetchComments } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return ({
@@ -27,7 +29,9 @@ const mapDispatchToProps = dispatch => {
         createFriend: (friend) => dispatch(createFriend(friend)),
         fetchFriends: () => dispatch(fetchFriends()),
         editFriend: (friend) => dispatch(editFriend(friend)),
-        deleteFriend: (friendId) => dispatch(deleteFriend(friendId))
+        deleteFriend: (friendId) => dispatch(deleteFriend(friendId)),
+        fetchLikes: () => dispatch(fetchLikes()),
+        fetchComments: () => dispatch(fetchComments())
     }
 };
 

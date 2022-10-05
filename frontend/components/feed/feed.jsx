@@ -10,7 +10,10 @@ class Feed extends React.Component {
     this.state = {
       posts: this.props.posts,
       users: this.props.users,
-      friends: this.props.friends
+      friends: this.props.friends,
+      users: this.props.users,
+      likes: this.props.likes,
+      comments: this.props.comments
     }
   }
 

@@ -35,11 +35,12 @@ class CreateComment extends React.Component {
     }
 
     render(){
-       
+        const renderPostPhoto = (this.props.currentUser.profilePhoto) ? <img className="post-pic-logo" src={`${this.props.currentUser.profilePhoto}`} /> : <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" className="post-pic-logo" />
         return(
             <form onSubmit={this.handleSubmit} className='create-post-form'>
                         <div className='post-user-container'>
-                            <img className='post-pic-logo' src={this.props.currentUser.profilePhoto}/>
+                          
+                            {renderPostPhoto}
                             <div className='post-user-name'>{this.props.currentUser.firstname} {this.props.currentUser.lastname}</div>
                             <input className="comment-input" type="text" onChange={this.update('body')} value={this.state.body} placeholder="Write a Comment.." />
                         </div>

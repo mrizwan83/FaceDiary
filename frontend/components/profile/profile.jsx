@@ -11,7 +11,9 @@ class Profile extends React.Component {
             user: this.props.user,
             photoFile: null,
             photoUrl: null,
-            friendRequests: []
+            friendRequests: [],
+            likes: this.props.likes,
+            comments: this.props.comments
         }
         this.openModal = this.openModal.bind(this);
         this.openPostModal = this.openPostModal.bind(this);
@@ -37,6 +39,18 @@ class Profile extends React.Component {
         this.props.fetchAllUsers();
         this.props.fetchPosts();
         this.props.fetchFriends();
+        this.props.fetchLikes()
+        .then(likes => {
+          this.setState({
+            likes: likes
+          })
+        })
+        this.props.fetchComments()
+        .then(comments => {
+          this.setState({
+            comments: comments
+          })
+        })
     }
 
     
@@ -182,6 +196,7 @@ class Profile extends React.Component {
 
 
     renderUser() {
+        console.log(this.state)
         const friendRequests = [];
         const friends = [];
         let alreadyFriends = false;

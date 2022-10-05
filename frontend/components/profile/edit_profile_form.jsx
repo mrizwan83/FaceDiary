@@ -5,10 +5,10 @@ class EditProfileForm extends React.Component {
     constructor(props) {
         super(props),
         this.state = {
-            bio: this.props.user.bio,
-            city: this.props.user.city,
-            school: this.props.user.school,
-            work: this.props.user.work
+            bio: this.props.user.bio? this.props.user.bio : "",
+            city: this.props.user.city? this.props.user.city : "",
+            school: this.props.user.school? this.props.user.school : "",
+            work: this.props.user.work? this.props.user.work : ""
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
