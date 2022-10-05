@@ -196,7 +196,6 @@ class Profile extends React.Component {
 
 
     renderUser() {
-        console.log(this.state)
         const friendRequests = [];
         const friends = [];
         let alreadyFriends = false;
@@ -222,7 +221,7 @@ class Profile extends React.Component {
             } 
         })
 
-        console.log(friends)
+   
   
         
 
@@ -282,7 +281,6 @@ class Profile extends React.Component {
 
 {friends.map(userId => {
     const friend = this.props.users[userId];
-    console.log(friend)
     if (friend) {
     const renderPostPhoto = (friend.profilePhoto) ? <img className="post-pic-logo" src={`${friend.profilePhoto}`} /> : <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" className="post-pic-logo" />
     return(

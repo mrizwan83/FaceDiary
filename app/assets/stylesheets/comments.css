@@ -26,3 +26,23 @@
     justify-content: center;
     align-items: center;
 }
+
+.comment-edit-cancel {
+    padding: 8px 16px;
+    margin: 2px;
+}
+
+
+.comment-edit-cancel:hover {
+    background-color: #eff2f5;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.comment-body-input-edit {
+    background-color: #f1f2f3;
+    padding: 10px;
+    flex: 1;
+    border-radius: 10px;
+    border: none;
+}

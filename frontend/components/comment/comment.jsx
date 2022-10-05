@@ -7,10 +7,22 @@ class Comment extends React.Component {
         this.state = {
             post: this.props.post,
             comment: this.props.comment,
-            creater: this.props.creater
+            creater: this.props.creater,
+            body: this.props.comment.body,
+            editing: false,
         }
         this.handleDisplay = this.handleDisplay.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+        this.update = this.update.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
+        this.handleCancel = this.handleCancel.bind(this);
+    }
+
+    update(field) {
+        return e => this.setState({
+            [field]: e.currentTarget.value
+        })
     }
 
 
@@ -24,7 +36,7 @@ class Comment extends React.Component {
     }
 
     handleEdit() {
-
+        this.setState({editing: true})
     }
 
     handleDelete(e){
@@ -32,9 +44,25 @@ class Comment extends React.Component {
         this.props.deleteComment(this.props.comment.id)
     }
 
+    handleSubmit() {
+        const formData = new FormData();
+        formData.id = this.props.comment.id;
+        formData.append('comment[body]', this.state.body);
+
+        this.props.editComment(formData)
+        this.setState({
+            editing: false,
+        })
+    }
+
+    handleCancel(e) {
+        e.preventDefault();
+        this.setState({editing: false})
+    }
+
     render(){
         const renderPostPhoto = (this.props.users[this.props.comment.author_id].profilePhoto) ? <img className="post-pic-logo" src={`${this.props.users[this.props.comment.author_id].profilePhoto}`} /> : <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" className="post-pic-logo" />
-        
+        const displayComment = this.state.editing
         return(
             <div>
 
@@ -42,8 +70,14 @@ class Comment extends React.Component {
                         <Link to={`/users/${this.props.comment.author_id}`}>    
                         {renderPostPhoto}
                         </Link>
-                            <div className="comment-body">{this.props.comment.body}</div>
-                                {this.handleDisplay()}
+                        {displayComment? <input type="text" onKeyDown={e => {
+            if (e.key === 'Enter') {
+                this.handleSubmit();}
+        }} className="comment-body-input-edit" 
+        onChange={this.update('body')} 
+        value={this.state.body}/> : 
+        <div className="comment-body">{this.props.comment.body}</div>}
+                                {displayComment? <div className="comment-edit-cancel" onClick={this.handleCancel}>Cancel</div> : this.handleDisplay()}
                         </div>
             </div>
         )

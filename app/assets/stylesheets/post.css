@@ -33,6 +33,7 @@
 
 .post-edit-delete {
     padding: 8px 16px;
+    margin: 2px;
 }
 
 .post-edit-delete:hover {

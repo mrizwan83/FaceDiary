@@ -129,7 +129,6 @@ class Post extends React.Component {
 
     render(){
         const commentsLength = [];
-        console.log(this.props.comments)
         const alreadyLiked = this.state.liked
         const commentOpened = this.state.commentOpen
         let date = new Date(this.props.post.created_at).toLocaleString();
