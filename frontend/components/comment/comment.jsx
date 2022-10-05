@@ -17,7 +17,7 @@ class Comment extends React.Component {
 
                         <div className='post-user-container'>
                             <img className='post-pic-logo' src={this.props.creater.profilePhoto} />
-                            <div>{this.props.comment.body}</div>
+                            <div className="comment-body">{this.props.comment.body}</div>
                         </div>
             </div>
         )

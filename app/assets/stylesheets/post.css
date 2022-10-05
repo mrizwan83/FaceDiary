@@ -164,6 +164,7 @@
     justify-content: flex-start;
     align-items: center;
     padding: 16px;
+    border-top: 1px solid lightgray;
 }
 
 .post-user-name {
