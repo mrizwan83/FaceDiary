@@ -128,17 +128,26 @@ class Post extends React.Component {
 
 
     render(){
+        const commentsLength = [];
         console.log(this.props.comments)
         const alreadyLiked = this.state.liked
         const commentOpened = this.state.commentOpen
         let date = new Date(this.props.post.created_at).toLocaleString();
         const renderPostPhoto = (this.props.post.postPhoto) ? <img  src={`${this.props.post.postPhoto}`} /> : null;
         let postsLikes =[];
+        Object.values(this.props.comments).map(comment => {
+            if (comment.post_id === this.props.post.id) {
+                commentsLength.push(comment)
+            }
+        })
+
         Object.values(this.props.likes).forEach(like => {
             if (like.post_id === this.props.post.id) {
                 postsLikes.push(like)
             }
         })
+
+
         return(
             <div className="post">
                 
@@ -172,7 +181,7 @@ class Post extends React.Component {
                 <div className="post-likes-comments">
             {alreadyLiked?  <div className="num-liked">{postsLikes.length} Likes</div> :  <div className="num-likes">{postsLikes.length} Likes</div>}
 
-            <div>{this.props.post.comments.length} Comments</div>
+            <div>{commentsLength.length} Comments</div>
                 </div>
                 <div className="post-options">
 
@@ -199,10 +208,8 @@ class Post extends React.Component {
                     </div>
                 </div>
 
-            {commentOpened? Object.values(this.props.comments).map(comment => {
-                if (comment.post_id === this.props.post.id) {
+            {commentOpened? commentsLength.map(comment => {     
                     return <CommentContainer key={comment.id} comment={comment} post={this.props.post} creater={this.props.currentUser}/> 
-                }
             }) : null}
 
             <CreateCommentContainer post={this.props.post}/>
