@@ -128,6 +128,7 @@ class Post extends React.Component {
 
 
     render(){
+        console.log(this.props.comments)
         const alreadyLiked = this.state.liked
         const commentOpened = this.state.commentOpen
         let date = new Date(this.props.post.created_at).toLocaleString();
@@ -198,8 +199,10 @@ class Post extends React.Component {
                     </div>
                 </div>
 
-            {commentOpened? this.props.post.comments.map(comment => {
-                return <CommentContainer key={comment.id} comment={comment} post={this.props.post} creater={this.props.currentUser}/>
+            {commentOpened? Object.values(this.props.comments).map(comment => {
+                if (comment.post_id === this.props.post.id) {
+                    return <CommentContainer key={comment.id} comment={comment} post={this.props.post} creater={this.props.currentUser}/> 
+                }
             }) : null}
 
             <CreateCommentContainer post={this.props.post}/>

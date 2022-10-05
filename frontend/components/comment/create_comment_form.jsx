@@ -23,7 +23,7 @@ class CreateComment extends React.Component {
         formData.append('comment[author_id]', this.props.currentUser.id)
         formData.append('comment[post_id]', this.props.post.id)
         this.props.createComment(formData)
-        .then(this.props.fetchPost(this.props.post.id))
+        // .then(this.props.fetchPost(this.props.post.id))
         .then(() => {
             this.setState({
                 body: '',
