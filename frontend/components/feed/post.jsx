@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import CreateCommentContainer from "../comment/create_comment_form_container";
 
 class Post extends React.Component {
     constructor(props){
@@ -180,6 +180,15 @@ class Post extends React.Component {
                         <img className="post-like-image" src="https://icon-library.com/images/comment-icon-png/comment-icon-png-19.jpg" alt="" /> Comment
                     </div>
                 </div>
+
+
+
+            <CreateCommentContainer post={this.props.post}/>
+
+
+
+
+
             </div>
         )
     }

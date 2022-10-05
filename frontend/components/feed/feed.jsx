@@ -41,6 +41,12 @@ componentDidMount () {
         likes: likes
       })
     })
+    this.props.fetchComments()
+    .then(comments => {
+      this.setState({
+        comments: comments
+      })
+    })
   }
   
 

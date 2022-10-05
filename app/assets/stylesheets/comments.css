@@ -1,0 +1,8 @@
+.comment-input {
+    padding: 10px;
+    flex: 1;
+    border-radius: 15px;
+    margin-left: 10px;
+    background-color: #f1f2f3;
+    border: none;
+}

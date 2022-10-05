@@ -6,6 +6,7 @@ import { fetchPosts } from '../../actions/post_actions';
 import { fetchAllUsers } from '../../actions/session_actions';
 import { fetchFriends } from '../../actions/friend_actions';
 import { fetchLikes } from '../../actions/like_actions';
+import { fetchComments } from '../../actions/comment_actions';
 
 
 const mapStateToProps = ({ session, entities: { users, posts, friends } }) => {
@@ -23,7 +24,8 @@ const mapDispatchToProps = dispatch => ({
     fetchPosts: () => dispatch(fetchPosts()),
     fetchAllUsers: () => dispatch(fetchAllUsers()),
     fetchFriends: () => dispatch(fetchFriends()),
-    fetchLikes: () => dispatch(fetchLikes())
+    fetchLikes: () => dispatch(fetchLikes()),
+    fetchComments: () => dispatch(fetchComments())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Feed);
