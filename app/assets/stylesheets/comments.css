@@ -19,6 +19,25 @@
     padding: 10px;
     flex: 1;
     border-radius: 10px;
+    margin: 0px 5px;
+}
+
+.comment-date {
+    font-size: 13px;
+    color: #65676b;
+}
+.comment-author-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.comment-show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
 }
 
 .comment-display-edit-delete {

@@ -65,6 +65,7 @@
     color: gray;
     cursor: pointer;
     padding: 12px;
+    border-bottom: 1px solid lightgray;
 }
 
 .post-option:hover {
@@ -165,7 +166,17 @@
     justify-content: flex-start;
     align-items: center;
     padding: 16px;
+  
+}
+
+.post-user-create-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 16px;
     border-top: 1px solid lightgray;
+    margin-top: -1px;
 }
 
 .post-user-name {

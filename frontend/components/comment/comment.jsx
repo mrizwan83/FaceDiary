@@ -61,22 +61,29 @@ class Comment extends React.Component {
     }
 
     render(){
+        const date = new Date(this.props.comment.created_at).toLocaleString();
         const renderPostPhoto = (this.props.users[this.props.comment.author_id].profilePhoto) ? <img className="post-pic-logo" src={`${this.props.users[this.props.comment.author_id].profilePhoto}`} /> : <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" className="post-pic-logo" />
+        const renderCommentAuthorName = (this.props.users[this.props.comment.author_id].firstname) ? <div className="comment-author">{this.props.users[this.props.comment.author_id].firstname}</div> : null
         const displayComment = this.state.editing
         return(
             <div>
 
                         <div className='post-user-container'>
-                        <Link to={`/users/${this.props.comment.author_id}`}>    
+                        <Link className='comment-author-link' to={`/users/${this.props.comment.author_id}`}>    
                         {renderPostPhoto}
+                        <div className="date-name">
+                        {renderCommentAuthorName}
+                        <p className="comment-date">{date}</p>
+                        </div>
                         </Link>
                         {displayComment? <input type="text" onKeyDown={e => {
             if (e.key === 'Enter') {
                 this.handleSubmit();}
         }} className="comment-body-input-edit" 
         onChange={this.update('body')} 
-        value={this.state.body}/> : 
-        <div className="comment-body">{this.props.comment.body}</div>}
+        value={this.state.body}/> : <div className="comment-show">
+           
+        <div className="comment-body">{this.props.comment.body}</div></div>}
                                 {displayComment? <div className="comment-edit-cancel" onClick={this.handleCancel}>Cancel</div> : this.handleDisplay()}
                         </div>
             </div>
