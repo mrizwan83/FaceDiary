@@ -20,6 +20,12 @@
     padding: 2px;
     color: black;
 }
+
+h3.post-show-item {
+    padding: 2px;
+    color: black;
+    font-weight: 550;
+}
 .post-image > img {
     width: 100%;
 }
