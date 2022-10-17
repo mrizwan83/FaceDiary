@@ -254,7 +254,7 @@ class Profile extends React.Component {
                                 <h3 className='friends-length'>ABOUT ME</h3>
                                 </div>
                                 
-                                <div id="profile-bio-d"><p>{this.props.user.bio}</p></div>
+                                <div id="profile-bio-d"><p className="profile-user-bio">{this.props.user.bio}</p></div>
                                 
                                 <div className='bio-row'>
                                     <div className='bio-icon'><img src="https://cdn2.iconfinder.com/data/icons/facebook-ui-colored/48/JD-27-512.png" alt="" className='bio-row-icon' /></div>

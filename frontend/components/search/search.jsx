@@ -28,8 +28,17 @@ class Search extends React.Component {
         this.setState({results: resultsarr})
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.location != this.props.location) {
+            this.setState({
+                search: "",
+                results: []
+            })    
+        }
+    }
 
     render() {
+
         return(
             <div className="search-component">
 
