@@ -29,9 +29,9 @@ class CreateComment extends React.Component {
                 body: '',
             })
         })
-        
-
-        
+        .then(() => {
+            this.props.handleOpen()
+        }) 
     }
 
     render(){
@@ -41,7 +41,7 @@ class CreateComment extends React.Component {
                         <div className='post-user-create-container'>
                           
                             {renderPostPhoto}
-                            <div className='post-user-name'>{this.props.currentUser.firstname} {this.props.currentUser.lastname}</div>
+                            {/* <div className='post-user-name'>{this.props.currentUser.firstname} {this.props.currentUser.lastname}</div> */}
                             <input className="comment-input" type="text" onChange={this.update('body')} value={this.state.body} placeholder="Write a Comment.." />
                         </div>
                     </form>

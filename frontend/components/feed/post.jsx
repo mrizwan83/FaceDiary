@@ -20,6 +20,7 @@ class Post extends React.Component {
         this.handleLikeDelete = this.handleLikeDelete.bind(this);
         this.handleLikeStatus = this.handleLikeStatus.bind(this);
         this.handleComment = this.handleComment.bind(this);
+        this.handleOpen = this.handleOpen.bind(this);
     }
 
     componentDidMount() {
@@ -126,6 +127,12 @@ class Post extends React.Component {
         }
     }
 
+    handleOpen() {
+        this.setState({
+            commentOpen: true,
+        })
+    }
+
 
     render(){
         const commentsLength = [];
@@ -211,7 +218,7 @@ class Post extends React.Component {
                     return <CommentContainer key={comment.id} comment={comment} post={this.props.post} creater={this.props.currentUser}/> 
             }) : null}
 
-            <CreateCommentContainer post={this.props.post}/>
+            <CreateCommentContainer post={this.props.post} handleOpen={this.handleOpen}/>
 
 
 
