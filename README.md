@@ -31,7 +31,7 @@ Users can upload pictures and view their posts on their profile
 ### Friends
 Users can send, deny or accept friend request
 
-### Like
+### Likes
 Users can create or delete likes
 
 ### Search
