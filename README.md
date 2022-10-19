@@ -40,7 +40,7 @@ Users can create, read, edit, and delete comments
 Users can upload pictures and view their posts on their profile
 
 ### Friends
-![](https://media.giphy.com/media/ms02aY14yZDLZzTJqx/giphy.gif)
+![](https://media.giphy.com/media/c6doSkFw7tzjrm762L/giphy.gif)
 
 Users can send, deny or accept friend request
 
