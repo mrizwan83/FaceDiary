@@ -27,6 +27,7 @@ class Profile extends React.Component {
         this.renderFriendRequest = this.renderFriendRequest.bind(this);
         this.renderAcceptFriend = this.renderAcceptFriend.bind(this);
         this.deleteFriendRequest = this.deleteFriendRequest.bind(this);
+        this.currentUserProfile = this.currentUserProfile.bind(this);
     }
 
     componentDidUpdate(prevProps) {
@@ -191,7 +192,9 @@ class Profile extends React.Component {
     this.props.deleteFriend(friendId)
    }
 
-   
+   currentUserProfile() {
+    if (this.props.currentUser.id === this.props.user.id) return true
+   }
     
 
 
@@ -296,14 +299,14 @@ class Profile extends React.Component {
     )
     }
 })}
-
-
+{this.currentUserProfile()? <h1 className='friends-length'>Friend Requests: {friendRequests.length}</h1> : null}
+ 
             {friendRequests.map(friend => {
             const f = this.props.users[friend.requester_id]
             if (f) {
                 const renderFriendPhoto = (f.profilePhoto) ? <img className="post-pic-logo" src={`${f.profilePhoto}`} /> : <img src="https://powerusers.microsoft.com/t5/image/serverpage/image-id/98171iCC9A58CAF1C9B5B9/image-size/large/is-moderation-mode/true?v=v2&px=999" className="post-pic-logo" />
             return(
-                <div ><h1 className='friends-length'>Friend Requests: {friendRequests.length}</h1>
+                <div >
                  <Link to={`/users/${f.id}`} key={f.id}>
                     <div  className="searchresult-item">
                             {renderFriendPhoto}
