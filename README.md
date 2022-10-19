@@ -45,7 +45,7 @@ Users can upload pictures and view their posts on their profile
 Users can send, deny or accept friend request
 
 ### Likes
-![](https://media.giphy.com/media/ms02aY14yZDLZzTJqx/giphy.gif)
+![](https://media.giphy.com/media/mK8ZOTX4Qp2LhRV8WU/giphy.gif)
 
 Users can create or delete likes
 
