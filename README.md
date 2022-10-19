@@ -30,7 +30,7 @@ User authentication: login, logout, signup, and errors
 Users can create edit and delete posts, having the ability to upload picture files to posts 
 
 ### Comments
-![](https://media.giphy.com/media/ms02aY14yZDLZzTJqx/giphy.gif)
+![](https://media.giphy.com/media/e0OwnSvVVK7zlRD8ZG/giphy.gif)
 
 Users can create, read, edit, and delete comments
 
