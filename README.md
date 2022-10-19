@@ -20,19 +20,19 @@
 User authentication: login, logout, signup, and errors
 
 ### Posts
-Users can create edit and delete posts, having the ability to upload files to posts 
+Users can create edit and delete posts, having the ability to upload picture files to posts 
 
 ### Comments
-Users can create, edit, and delete comments
+Users can create, read, edit, and delete comments
 
 ### Profiles
 Users can upload pictures and view their posts on their profile
 
 ### Friends
-Users can send friend requests, deny or accept friend request
+Users can send, deny or accept friend request
 
 ### Like
-Users can create or delete likes for posts
+Users can create or delete likes
 
 ### Search
 Users can search for other users in the search component
