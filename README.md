@@ -20,6 +20,8 @@
 ## Functionality and Features
 
 ### User Auth 
+![](https://media.giphy.com/media/ms02aY14yZDLZzTJqx/giphy.gif)
+
 User authentication: login, logout, signup, and errors
 
 ### Posts
