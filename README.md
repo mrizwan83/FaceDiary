@@ -25,20 +25,32 @@
 User authentication: login, logout, signup, and errors
 
 ### Posts
+![](https://media.giphy.com/media/WU6mHhH7eSjXiwdFfY/giphy.gif)
+
 Users can create edit and delete posts, having the ability to upload picture files to posts 
 
 ### Comments
+![](https://media.giphy.com/media/ms02aY14yZDLZzTJqx/giphy.gif)
+
 Users can create, read, edit, and delete comments
 
 ### Profiles
+![](https://media.giphy.com/media/ms02aY14yZDLZzTJqx/giphy.gif)
+
 Users can upload pictures and view their posts on their profile
 
 ### Friends
+![](https://media.giphy.com/media/ms02aY14yZDLZzTJqx/giphy.gif)
+
 Users can send, deny or accept friend request
 
 ### Likes
+![](https://media.giphy.com/media/ms02aY14yZDLZzTJqx/giphy.gif)
+
 Users can create or delete likes
 
 ### Search
+![](https://media.giphy.com/media/ms02aY14yZDLZzTJqx/giphy.gif)
+
 Users can search for other users in the search component
 
