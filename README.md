@@ -50,7 +50,7 @@ Users can send, deny or accept friend request
 Users can create or delete likes
 
 ### Search
-![](https://media.giphy.com/media/ms02aY14yZDLZzTJqx/giphy.gif)
+![](https://media.giphy.com/media/4j5i2GzmBvCQXOZUN0/giphy.gif)
 
 Users can search for other users in the search component
 
