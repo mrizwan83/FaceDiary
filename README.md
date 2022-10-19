@@ -35,7 +35,7 @@ Users can create edit and delete posts, having the ability to upload picture fil
 Users can create, read, edit, and delete comments
 
 ### Profiles
-![](https://media.giphy.com/media/ms02aY14yZDLZzTJqx/giphy.gif)
+![](https://media.giphy.com/media/IrsX23CRd8oq6MAYN6/giphy.gif)
 
 Users can upload pictures and view their posts on their profile
 
