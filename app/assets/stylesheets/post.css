@@ -44,6 +44,23 @@
     border-radius: 15px;
 }
 
+.delete-options{
+    width: 150px;
+    position: absolute;
+    right: 0;
+    top: 21px;
+    box-shadow: rgba(0, 0, 0, .1) 0px 1px 4px;
+    padding: 8px 0px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 1);
+
+}
+
+.svg-post {
+    position: absolute;
+    cursor: pointer;
+}
+
 
 .post-top {
     display: flex;

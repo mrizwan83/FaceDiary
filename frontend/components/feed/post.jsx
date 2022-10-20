@@ -11,6 +11,7 @@ class Post extends React.Component {
             liked: false,
             currentUserLike: null,
             commentOpen: false,
+            open: false
         }
         this.handlePostAuthor = this.handlePostAuthor.bind(this);
         this.handleAuthorName = this.handleAuthorName.bind(this);
@@ -21,6 +22,7 @@ class Post extends React.Component {
         this.handleLikeStatus = this.handleLikeStatus.bind(this);
         this.handleComment = this.handleComment.bind(this);
         this.handleOpen = this.handleOpen.bind(this);
+        this.openAccess = this.openAccess.bind(this);
     }
 
     componentDidMount() {
@@ -60,17 +62,29 @@ class Post extends React.Component {
         e.preventDefault();
         this.props.deletePost(this.props.post.id)
     }
+
+    openAccess() {
+        this.setState({
+            open: !this.state.open
+        })
+    }
     
 
     handleAuthorButtons() {
         if (this.props.post.author_id === this.props.currentUser.id) {
             return(
-                <div className="post-author-btn">
 
-                <div onClick={() => this.props.otherForm('Update Post', this.props.post.id)} className="post-edit-delete">Edit</div>
-                <div onClick={this.handleDelete} className="post-edit-delete">Delete</div>
-
+ <div className="post-author-btn">
+                <svg className="svg-post" onClick={this.openAccess}  width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M4.39 12c0 .55.2 1.02.59 1.41.39.4.86.59 1.4.59.56 0 1.03-.2 1.42-.59.4-.39.59-.86.59-1.41 0-.55-.2-1.02-.6-1.41A1.93 1.93 0 0 0 6.4 10c-.55 0-1.02.2-1.41.59-.4.39-.6.86-.6 1.41zM10 12c0 .55.2 1.02.58 1.41.4.4.87.59 1.42.59.54 0 1.02-.2 1.4-.59.4-.39.6-.86.6-1.41 0-.55-.2-1.02-.6-1.41a1.93 1.93 0 0 0-1.4-.59c-.55 0-1.04.2-1.42.59-.4.39-.58.86-.58 1.41zm5.6 0c0 .55.2 1.02.57 1.41.4.4.88.59 1.43.59.57 0 1.04-.2 1.43-.59.39-.39.57-.86.57-1.41 0-.55-.2-1.02-.57-1.41A1.93 1.93 0 0 0 17.6 10c-.55 0-1.04.2-1.43.59-.38.39-.57.86-.57 1.41z" fill="#000"></path>
+                </svg>
                 </div>
+                // <div className="post-author-btn">
+
+                // <div onClick={() => this.props.otherForm('Update Post', this.props.post.id)} className="post-edit-delete">Edit</div>
+                // <div onClick={this.handleDelete} className="post-edit-delete">Delete</div>
+
+                // </div>
             )
         }
     }
@@ -136,6 +150,7 @@ class Post extends React.Component {
 
     render(){
         const commentsLength = [];
+        const opened = this.state.open
         const alreadyLiked = this.state.liked
         const commentOpened = this.state.commentOpen
         let date = new Date(this.props.post.created_at).toLocaleString();
@@ -169,7 +184,17 @@ class Post extends React.Component {
                 
                 
                     {this.handleAuthorButtons()}
+                    {opened &&  <div className="delete-options">
 
+<div onClick={() => {this.openAccess();
+ this.props.otherForm('Update Post', this.props.post.id)
+
+}
+
+} className="post-edit-delete">Edit</div>
+<div onClick={this.handleDelete} className="post-edit-delete">Delete</div>
+
+</div> }
               
 
 
