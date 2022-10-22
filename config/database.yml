@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: faceDiary_production
-  username: faceDiary
-  password: <%= ENV['FACEDIARY_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: faceDiary_production
+  # username: faceDiary
+  # password: <%= ENV['FACEDIARY_DATABASE_PASSWORD'] %>
