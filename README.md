@@ -13,9 +13,11 @@
   * jQuery
   * React
   * Redux
-  * npm/webpack/babel
+  * NPM/Webpack/Babel
   * AWS S3/IAM
   * Heroku
+  * CSS 3
+  * HTML 5
 
 ## Functionality and Features
 
