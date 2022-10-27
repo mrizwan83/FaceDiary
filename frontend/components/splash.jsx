@@ -18,9 +18,10 @@ class Splash extends React.Component {
         <footer className="footer-info">
           <div className='copyright'>&copy; Mohammad Rizwan 2022</div>
           <div className='footer-links'>
-            <a target="_blank" href="https://linkedin.com/in/mohammad-rizwan-a83a31246">LinkedIn</a>
+            <a target="_blank" href="https://www.linkedin.com/in/mohammad-h-rizwan/">LinkedIn</a>
             <a target="_blank" href="https://github.com/mrizwan83">GitHub</a>
             <a target="_blank" href="https://github.com/mrizwan83/FaceDiary">FaceDiary Repo</a>
+            <a target="_blank" href="https://mrizwan83.github.io/mrizwan83/">Portfolio Site</a>
           </div>
         </footer>
       </>

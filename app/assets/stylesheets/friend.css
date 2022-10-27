@@ -60,4 +60,6 @@
     flex-direction: column;
     flex-wrap: wrap;
     margin-right: 20px;
+    position: sticky;
+    top: 80px;
 }
