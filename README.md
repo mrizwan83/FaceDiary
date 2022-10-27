@@ -31,37 +31,41 @@ Users get an automated friend request from demo user upon signing up
 ## Functionality and Features
 
 ### User Auth 
-![](https://media.giphy.com/media/ms02aY14yZDLZzTJqx/giphy.gif)
-
 User authentication: login, logout, signup, and errors
 
+![](https://media.giphy.com/media/ms02aY14yZDLZzTJqx/giphy.gif)
+
 ### Posts
+Users can create edit and delete posts, having the ability to upload picture files to posts. Users can only edit posts if they are the author. Users can delete posts if they are the author.User's created Posts will show up on their profile. This allows more customization for what others can see when visiting their profile pages. 
+
 ![](https://media.giphy.com/media/WU6mHhH7eSjXiwdFfY/giphy.gif)
 
-Users can create edit and delete posts, having the ability to upload picture files to posts 
-
 ### Comments
-![](https://media.giphy.com/media/e0OwnSvVVK7zlRD8ZG/giphy.gif)
-
 Users can create, read, edit, and delete comments
 
-### Profiles
-![](https://media.giphy.com/media/IrsX23CRd8oq6MAYN6/giphy.gif)
+![](https://media.giphy.com/media/e0OwnSvVVK7zlRD8ZG/giphy.gif)
 
+### Profiles
 Users can upload pictures and view their posts on their profile
 
+![](https://media.giphy.com/media/IrsX23CRd8oq6MAYN6/giphy.gif)
+
 ### Friends
+Users can send, deny or accept friend request. Upon Creating an account User's get a friend request fron Demo user.
+
 ![](https://media.giphy.com/media/c6doSkFw7tzjrm762L/giphy.gif)
 
-Users can send, deny or accept friend request
-
 ### Likes
+Users can like or unlike posts.
+
 ![](https://media.giphy.com/media/mK8ZOTX4Qp2LhRV8WU/giphy.gif)
 
-Users can create or delete likes
+
 
 ### Search
+Users can search for other users in the search bar.
+
 ![](https://media.giphy.com/media/4j5i2GzmBvCQXOZUN0/giphy.gif)
 
-Users can search for other users in the search component
+
 
