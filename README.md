@@ -18,8 +18,15 @@ I have Two servers running on two different applicaton hosting platforms Heroku,
   * NPM/Webpack/Babel
   * AWS S3/IAM
   * Heroku
+  * Render
   * CSS 3
   * HTML 5
+  
+  
+## Code Snippet
+Users get an automated friend request from demo user upon signing up
+
+<a href="https://imgur.com/68LtIvh"><img src="https://i.imgur.com/68LtIvh.png" title="source: imgur.com" /></a>
 
 ## Functionality and Features
 
