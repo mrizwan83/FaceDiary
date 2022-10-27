@@ -251,6 +251,7 @@ class Profile extends React.Component {
 
                     <div className="profile-body">
                         <div className="profile-bio-section">
+                            <div className='profile-left-always'>
                         {alreadyFriends? null: this.renderFriendRequest()}
                             <div className="profile-bio">
                                 <div id="profile-bio-about">
@@ -327,6 +328,7 @@ class Profile extends React.Component {
 
                     </div>
                         </div>
+                        </div>
 
                         <div className="profile-post-container">
 
@@ -349,7 +351,9 @@ class Profile extends React.Component {
                             </div>
                             </div>
                             </div>
-
+<div className='allposts-profile'>
+{this.displayUserPosts()}
+ </div>
 
                            
                         </div>
@@ -357,13 +361,7 @@ class Profile extends React.Component {
 
 
 
-                    <div className='allposts-profile'>
 
-
-{this.displayUserPosts()}
-
-
- </div>
             </div>
         )
     }
