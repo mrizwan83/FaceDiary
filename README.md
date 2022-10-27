@@ -1,12 +1,12 @@
 # [FaceDiary](http://facediary.herokuapp.com/#/) Live Link Deployed to Heroku
 # [FaceDiary](https://facediary.onrender.com) Live Link Deployed to Render
-I have Two servers running on two different applicaton hosting platforms Heroku, and Render
+
 ## Brief Overview
 [FaceDiary](http://facediary.herokuapp.com/#/), a [Facebook](https://facebook.com) clone, is a social media application allowing users to signup and login to interact with other people. Users can create profiles, search, make friends and friend requests, visit their feed. User's can create Posts such as ideas, thoughts, pictures, basically whatever the user has on their mind and would like to share via a Post. Users can then Like and Comment on the Posts.
 
   
 ## Demo
-![](https://media.giphy.com/media/87EqaNnmZdjeiiqhhc/giphy.gif)
+![](https://media.giphy.com/media/8ZoZFVQYPsrNfZTOPP/giphy.gif)
 
 ## Technologies Used
   * Ruby
