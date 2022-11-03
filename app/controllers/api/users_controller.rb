@@ -31,7 +31,11 @@ class Api::UsersController < ApplicationController
         end
     end
 
+    
+
     def index 
+        # User.include(:comments).all (Same Query from one table because it joins it so no N+1 queries)
+        # @users = User.includes(:comments, :likes).all
         @users = User.all
         render :index
     end

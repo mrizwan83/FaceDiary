@@ -9,12 +9,15 @@ import { fetchLikes } from '../../actions/like_actions';
 import { fetchComments } from '../../actions/comment_actions';
 
 
-const mapStateToProps = ({ session, entities: { users, posts, friends } }) => {
+const mapStateToProps = ({ session, entities: { users, posts, friends, likes, comments } }) => {
     return {
         currentUser: users[session.id],
         posts: posts,
         users: users,
-        friends: friends
+        friends: friends,
+        users: users,
+        likes: likes,
+        comments: comments
     }
 };
 

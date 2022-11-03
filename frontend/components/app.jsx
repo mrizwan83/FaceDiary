@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
 import ProfileContainer from './profile/profile_container';
 import SplashContainer from './splash';
 // import NewsFeedContainer from './news_feed/news_feed_container';

@@ -21,35 +21,35 @@ class Feed extends React.Component {
 
 componentDidMount () {
   this.props.fetchAllUsers()
-  .then(users => {
-    this.setState({
-      users: users
-    })
-  })
+  // .then(users => {
+  //   this.setState({
+  //     users: users
+  //   })
+  // })
     this.props.fetchPosts()
-    .then(posts => {
-      this.setState({
-        posts: posts
-      })
-    })
+    // .then(posts => {
+    //   this.setState({
+    //     posts: posts
+    //   })
+    // })
     this.props.fetchFriends()
-    .then(friends => {
-      this.setState({
-        friends: friends
-      })
-    })
+    // .then(friends => {
+    //   this.setState({
+    //     friends: friends
+    //   })
+    // })
     this.props.fetchLikes()
-    .then(likes => {
-      this.setState({
-        likes: likes
-      })
-    })
+    // .then(likes => {
+    //   this.setState({
+    //     likes: likes
+    //   })
+    // })
     this.props.fetchComments()
-    .then(comments => {
-      this.setState({
-        comments: comments
-      })
-    })
+    // .then(comments => {
+    //   this.setState({
+    //     comments: comments
+    //   })
+    // })
   }
   
 

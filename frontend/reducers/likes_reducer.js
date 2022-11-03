@@ -5,9 +5,9 @@ const likesReducer = (state={}, action) => {
     let nextState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_ALL_LIKES:
-            return Object.assign({}, action.likes.likes);
+            return Object.assign({}, action.likes);
         case RECEIVE_LIKE:
-            nextState[action.like.like.id] = action.like.like
+            nextState[action.like.id] = action.like
             return nextState;
         case REMOVE_LIKE:
             delete nextState[action.likeId]

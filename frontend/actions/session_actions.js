@@ -32,6 +32,9 @@ const receiveUser = user => ({
   user
 })
 
+
+// this is our regular action creator
+// an action is a JS obect that has Key-value pairs with type and some type of payload
 const receiveAllUsers = usersPayload => ({
   type: RECEIVE_ALL_USERS,
   usersPayload
@@ -66,6 +69,22 @@ export const fetchUser = (userId) => {
       .then((user) => { dispatch(receiveUser(user)) })
   }
 }
+// thunk action creator
+// This is asycnhronous 
+// ,then --> callback --> invoke dispatch --> invoke receiveAllUsers with allUsers
+// allUsers represent the Json Jbuilder Response
+
+
+// what does it mean when we dispatch an action????
+// dispatch is a redux function 
+// VERY IMPORTANT
+// when you dispatch an action it send your action through your reducers!!!!!!!!!!!
+// when you dispatch an action it hits every reducer
+// EVERY ACTION HITS EVERY REDUCER
+// THE KEY IS THE TYPE
+
+
+
 
 export const fetchAllUsers = () => {
   return (dispatch) => {

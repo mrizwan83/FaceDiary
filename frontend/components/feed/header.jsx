@@ -24,7 +24,7 @@ class Header extends React.Component {
                 <a href="https://github.com/mrizwan83/FaceDiary" target="_blank"><img src="https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png" alt="" className="logo"/></a>
                 <a href="https://angel.co/u/mohammad-h-rizwan" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhGOMqJ4VmhTJxuQ3ejv4jyki4ZfZQJURn7F8uGmBALA&s" alt="" className="logo"/></a>
                 <a href="https://www.linkedin.com/in/mohammad-h-rizwan/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/800px-LinkedIn_logo_initials.png" alt="" className="logo" /></a>
-                <a href="https://mrizwan83.github.io/mrizwan83/" target="_blank"><img src="https://www.pngitem.com/pimgs/m/548-5486247_portfolio-icon-design-icon-applewar-hd-png-download.png" alt="" className="logo" /></a>
+                <a href="https://mrizwan83.github.io/mrizwan83/" target="_blank"><img src="https://simg.nicepng.com/png/small/154-1545276_portfolio-icon-circle.png" alt="" className="logo" /></a>
             </div>
 
             <div className="header-right">

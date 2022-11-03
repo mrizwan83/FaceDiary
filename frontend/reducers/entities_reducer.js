@@ -14,3 +14,5 @@ const entitiesReducer = combineReducers({
 });
 
 export default entitiesReducer;
+
+// this is to make slices of states 

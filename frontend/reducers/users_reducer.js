@@ -6,12 +6,12 @@ const usersReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_ALL_USERS:
-      return Object.assign({}, action.usersPayload.users)
+      return Object.assign({}, action.usersPayload)
     case RECEIVE_CURRENT_USER:
       nextState[action.currentUser.id] = action.currentUser
       return nextState;
     case RECEIVE_USER:
-      nextState[action.user.id] = action.user.user
+      nextState[action.user.id] = action.user
       return nextState;
     default:
       return state;
@@ -19,3 +19,5 @@ const usersReducer = (state = {}, action) => {
 };
 
 export default usersReducer;
+
+// anything you return its going to update the entities users slice of state
