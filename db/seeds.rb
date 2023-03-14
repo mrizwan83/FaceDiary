@@ -11,11 +11,11 @@ User.create()
 
 #New Work/ Seeding/ Must clean existing database before seeding
 
-Comments.destroy_all
-Friends.destroy_all
-Likes.destroy_all
-Posts.destroy_all
-Users.destroy_all
+Comment.destroy_all
+Friend.destroy_all
+Like.destroy_all
+Post.destroy_all
+User.destroy_all
 
 #Lets make demo user/ my profile
 
